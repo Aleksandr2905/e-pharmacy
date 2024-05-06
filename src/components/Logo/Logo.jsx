@@ -7,7 +7,7 @@ const Logo = () => {
   const { pathname } = useLocation();
 
   return (
-    <s.Wrapper>
+    <s.Wrapper href="/">
       {pathname === "/" ? (
         <s.Img src={logo} alt="logo" />
       ) : (

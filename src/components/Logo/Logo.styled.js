@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.a`
   display: flex;
   align-items: center;
   gap: 12px;
