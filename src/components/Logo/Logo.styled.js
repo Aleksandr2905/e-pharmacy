@@ -12,7 +12,7 @@ export const Img = styled.img`
 `;
 
 export const Text = styled.p`
-  font-family: "SemiBold", sans-serif;
+  /* font-family: "SemiBold", sans-serif; */
   font-size: 16px;
   font-weight: 600;
   line-height: normal;
