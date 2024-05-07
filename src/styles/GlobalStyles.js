@@ -122,7 +122,7 @@ a {
 }
 `;
 
-export const Container = styled.div`
+export const Container = styled.section`
   padding-left: 20px;
   padding-right: 20px;
 

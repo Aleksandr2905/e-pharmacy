@@ -1,5 +1,13 @@
+import MainBanner from "../../components/MainBanner/MainBanner";
+import PromoBanners from "../../components/PromoBanners/PromoBanners";
+
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <>
+      <MainBanner />
+      <PromoBanners />
+    </>
+  );
 };
 
 export default HomePage;

@@ -8,5 +8,11 @@ export const theme = {
     lightGrey30: "rgba(247, 248, 250, 0.30)",
     white: "#FFFFFF",
     black: "#1D1E21",
+    bgPromo: "#fdfdfd",
+    bgPromoBanner: "rgba(231, 241, 237, 0.4)",
+    promoTitle: "#252539",
+  },
+  border: {
+    promo: "#f1f1f1",
   },
 };
