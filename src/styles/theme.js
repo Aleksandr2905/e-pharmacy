@@ -11,8 +11,7 @@ export const theme = {
     bgPromo: "#fdfdfd",
     bgPromoBanner: "rgba(231, 241, 237, 0.4)",
     promoTitle: "#252539",
-  },
-  border: {
-    promo: "#f1f1f1",
+    promoBorder: "#f1f1f1",
+    buttonBorder: "rgba(241, 241, 241, 0.5)",
   },
 };

@@ -17,7 +17,7 @@ export const Item = styled.li`
   gap: 14px;
   flex-shrink: 0;
   border-radius: 27px;
-  border: 1px solid ${({ theme }) => theme.border.promo};
+  border: 1px solid ${({ theme }) => theme.color.promoBorder};
   background: ${({ theme }) => theme.color.bgPromo};
   box-shadow: 0px -1px 13.858px 0px rgba(29, 30, 33, 0.02);
 `;
