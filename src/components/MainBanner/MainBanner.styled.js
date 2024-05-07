@@ -16,6 +16,7 @@ export const Wrapper = styled.div`
   height: 312px;
   margin: auto 0;
   background-image: url(${heroMob});
+  background-size: 100% 100%;
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
