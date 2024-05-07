@@ -12,7 +12,7 @@ export const Section = styled(Container)`
 `;
 
 export const Wrapper = styled.div`
-  width: 331px;
+  max-width: 331px;
   height: 312px;
   margin: auto 0;
   background-image: url(${heroMob});
