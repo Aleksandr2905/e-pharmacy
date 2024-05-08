@@ -22,6 +22,7 @@ export const Address = styled.div`
 `;
 
 export const Text = styled.p`
+  white-space: nowrap;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
@@ -35,6 +36,9 @@ export const Phone = styled.div`
 `;
 
 export const RightBlock = styled.div`
+  position: absolute;
+  right: 32px;
+  top: 32px;
   display: flex;
   gap: 14px;
   height: 34px;
