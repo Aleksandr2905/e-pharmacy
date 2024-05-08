@@ -7,7 +7,7 @@ export const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
   // overflow: hidden;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(29, 30, 33, 0.45);
   display: flex;
   justify-content: ${(props) => (props.$burger ? "flex-end" : "center")};
   align-items: center;
