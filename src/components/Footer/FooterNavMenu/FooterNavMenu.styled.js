@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Wrapper = styled.ul`
+export const Wrapper = styled.nav`
   display: flex;
   gap: 32px;
   margin-bottom: 80px;

@@ -1,22 +1,24 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 185px;
+  width: 210px;
   height: 100vh;
-  padding: 16px;
   position: relative;
+  background-color: ${({ theme }) => theme.color.green};
 `;
 
 export const CloseBtn = styled.button`
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 31px;
+  right: 20px;
   border: none;
   padding: 0;
   background-color: transparent;
 
   & svg {
-    stroke: red;
+    stroke: ${({ theme }) => theme.color.white};
+    transition: all 0.3s;
 
     &:hover {
       transform: rotate(90deg);
@@ -24,10 +26,45 @@ export const CloseBtn = styled.button`
   }
 `;
 
+export const IconNav = styled.div`
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  position: relative;
+  top: 35%;
+  left: 18%;
+  /* height: 100%; */
+`;
+
 export const Navigation = styled.nav`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 28px;
-  margin-top: calc((50vh - 184px) / 2);
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 37%;
+  left: 21%;
+  gap: 18px;
+`;
+
+export const NavBtn = styled(NavLink)`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 100%;
+  padding: 8px 12px;
+  color: ${({ theme }) => theme.color.grey};
+
+  &:hover {
+    color: ${({ theme }) => theme.color.white};
+    padding: 8px 12px;
+    border-radius: 24px;
+    background-color: ${({ theme }) => theme.color.green};
+  }
+
+  &.active {
+    color: ${({ theme }) => theme.color.white};
+    padding: 8px 12px;
+    border-radius: 24px;
+    background-color: ${({ theme }) => theme.color.green};
+  }
 `;
