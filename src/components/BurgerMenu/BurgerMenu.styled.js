@@ -43,7 +43,7 @@ export const Navigation = styled.nav`
   align-items: center;
   position: absolute;
   top: 36%;
-  left: 20%;
+  left: 21%;
   gap: 18px;
 `;
 
