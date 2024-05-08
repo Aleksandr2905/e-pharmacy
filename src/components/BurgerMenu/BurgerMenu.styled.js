@@ -32,7 +32,7 @@ export const IconNav = styled.div`
   align-items: center; */
   position: relative;
   top: 35%;
-  left: 18%;
+  left: 17%;
   /* height: 100%; */
 `;
 
@@ -42,8 +42,8 @@ export const Navigation = styled.nav`
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 37%;
-  left: 21%;
+  top: 36%;
+  left: 20%;
   gap: 18px;
 `;
 
