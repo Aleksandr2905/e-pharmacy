@@ -33,6 +33,19 @@ export const Phone = styled.div`
   display: flex;
   gap: 8px;
   margin-top: 18px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 166.806px;
+    height: 35.383px;
+    transform: rotate(22deg);
+    position: absolute;
+    left: 191.394px;
+    bottom: -65.113px;
+    border-radius: 20px 0px 0px 20px;
+    background: rgba(89, 177, 122, 0.08);
+  }
 `;
 
 export const RightBlock = styled.div`
