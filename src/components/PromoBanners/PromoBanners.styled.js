@@ -3,14 +3,15 @@ import styled from "styled-components";
 export const Wrapper = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
   margin: 40px 0;
 `;
 
 export const Item = styled.li`
   display: flex;
-  /* width: 335px;
-  height: 126px; */
+  width: 335px;
+  /* height: 126px; */
   padding: 14px 18px;
   flex-direction: column;
   align-items: flex-start;

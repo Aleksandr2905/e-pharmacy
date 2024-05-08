@@ -4,8 +4,9 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 335px;
   border-radius: 32px;
-  margin-bottom: 40px;
+  margin: 0 auto 40px auto;
   padding: 20px;
   gap: 19px;
   background-color: ${({ theme }) => theme.color.green};
