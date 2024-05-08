@@ -10,7 +10,7 @@ export const Item = styled.li`
   display: flex;
   justify-content: space-between;
   position: relative;
-  width: 335px;
+  min-width: 335px;
   padding: 32px 32px 40px;
   border-radius: 27px;
   overflow: hidden;
