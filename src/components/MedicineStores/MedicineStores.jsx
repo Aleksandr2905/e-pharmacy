@@ -12,7 +12,7 @@ const MedicineStores = () => {
   console.log(nearestStores);
 
   useEffect(() => {
-    dispatch(getNearestStores());
+    dispatch(getNearestStores({ limit: 6 }));
   }, [dispatch]);
 
   return (
