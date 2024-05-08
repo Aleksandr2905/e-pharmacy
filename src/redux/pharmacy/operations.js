@@ -13,3 +13,15 @@ export const getNearestStores = createAsyncThunk(
     }
   }
 );
+
+export const getReviews = createAsyncThunk(
+  "pharmacy/reviews",
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await instance.get("/customer-reviews");
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

@@ -9,7 +9,6 @@ import * as s from "./MedicineStores.styled";
 const MedicineStores = () => {
   const dispatch = useDispatch();
   const nearestStores = useSelector(selectNearestStores);
-  console.log(nearestStores);
 
   useEffect(() => {
     dispatch(getNearestStores({ limit: 6 }));
