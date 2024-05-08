@@ -6,12 +6,21 @@ const initialState = {
   reviews: [],
   isLoading: false,
   error: null,
+  openModal: false,
+  modalContent: null,
 };
 
 export const pharmacySlice = createSlice({
   name: "pharmacy",
   initialState,
-  reducers: {},
+  reducers: {
+    setModalStatus: (state, { payload }) => {
+      state.openModal = payload;
+    },
+    setModalContent: (state, { payload }) => {
+      state.modalContent = payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getNearestStores.fulfilled, (state, { payload }) => {
@@ -45,4 +54,5 @@ export const pharmacySlice = createSlice({
   },
 });
 
+export const { setModalStatus, setModalContent } = pharmacySlice.actions;
 export const pharmacyReducer = pharmacySlice.reducer;

@@ -9,8 +9,21 @@ import MedicinePage from "./pages/MedicinePage/MedicinePage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CartPage from "./pages/CartPage/CartPage";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
+import ModalContent from "./components/ModalContent/ModalContent";
+import Modal from "./components/Modal/Modal";
+import { setModalContent, setModalStatus } from "./redux/pharmacy/reducer";
+import { useDispatch, useSelector } from "react-redux";
+import { selectOpenModal } from "./redux/pharmacy/selectors";
 
 const App = () => {
+  const dispatch = useDispatch();
+  const modalStatus = useSelector(selectOpenModal);
+
+  const handleCloseModal = () => {
+    dispatch(setModalStatus(false));
+    dispatch(setModalContent(null));
+  };
+
   return (
     <>
       <Routes>
@@ -24,6 +37,10 @@ const App = () => {
           <Route path="/cart" element={<CartPage />} />
         </Route>
       </Routes>
+
+      <Modal open={modalStatus} onClose={handleCloseModal}>
+        {<ModalContent />}
+      </Modal>
 
       <ToastContainer
         position="top-center"
