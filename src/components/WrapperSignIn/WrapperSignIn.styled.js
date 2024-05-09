@@ -21,18 +21,6 @@ export const Container = styled.section`
     background-size: contain;
     z-index: -1;
   }
-
-  /* &::after {
-    content: "";
-    position: absolute;
-    width: 222.37px;
-    height: 47.169px;
-    bottom: -42px;
-    right: -50px;
-    transform: rotate(22deg);
-    border-radius: 60px 0px 0px 60px;
-    background: rgba(89, 177, 122, 0.08);
-  } */
 `;
 
 export const Wrapper = styled.div`
@@ -42,19 +30,6 @@ export const Wrapper = styled.div`
   max-width: 335px;
   margin: 0 auto;
   height: 100%;
-  /* position: relative; */
-
-  /* &::before {
-    content: "";
-    position: absolute;
-    width: 222.37px;
-    height: 47.169px;
-    bottom: 64px;
-    right: -121px;
-    transform: rotate(22deg);
-    border-radius: 60px 0px 0px 60px;
-    background: rgba(89, 177, 122, 0.08);
-  } */
 `;
 
 export const Title = styled.h2`

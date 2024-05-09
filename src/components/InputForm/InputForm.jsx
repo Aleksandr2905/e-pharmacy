@@ -2,7 +2,14 @@ import { useState } from "react";
 import sprite from "../../assets/icons/sprite.svg";
 import * as s from "./InputForm.styled";
 
-const InputForm = ({ name, placeholder, register, errors }) => {
+const InputForm = ({
+  name,
+  placeholder,
+  register,
+  errors,
+  isValid,
+  touched,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const getInputType = () => {
@@ -25,6 +32,7 @@ const InputForm = ({ name, placeholder, register, errors }) => {
         placeholder={placeholder}
         {...register(name)}
         $errors={errors[name]}
+        $isValid={touched && isValid}
       />
       <s.ErrorText>{errors[name]?.message}</s.ErrorText>
       {name === "password" && (
