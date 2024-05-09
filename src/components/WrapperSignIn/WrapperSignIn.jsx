@@ -7,8 +7,9 @@ const WrapperSignIn = ({ children }) => {
       <Logo />
       <s.Wrapper>
         <s.Title>
-          Your medication, delivered Say goodbye to all{" "}
-          <span>your healthcare</span> worries with us
+          Your medication, <br />
+          delivered Say goodbye to all <span>your healthcare</span> worries with
+          us
         </s.Title>
         {children}
       </s.Wrapper>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import pill from "../../assets/images/pill@1x.png";
+import elements from "../../assets/images/mobile/elements.png";
 
 export const Container = styled.section`
   padding: 25px 20px;
@@ -10,16 +11,18 @@ export const Container = styled.section`
   &::before {
     content: "";
     position: absolute;
-    width: 222.37px;
-    height: 47.169px;
-    bottom: 22px;
-    right: -38px;
-    transform: rotate(22deg);
-    border-radius: 60px 0px 0px 60px;
-    background: rgba(89, 177, 122, 0.08);
+    bottom: -81px;
+    right: -78px;
+    width: 264px;
+    height: 249px;
+    background-image: url(${elements});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
   }
 
-  &::after {
+  /* &::after {
     content: "";
     position: absolute;
     width: 222.37px;
@@ -29,7 +32,7 @@ export const Container = styled.section`
     transform: rotate(22deg);
     border-radius: 60px 0px 0px 60px;
     background: rgba(89, 177, 122, 0.08);
-  }
+  } */
 `;
 
 export const Wrapper = styled.div`
@@ -39,9 +42,9 @@ export const Wrapper = styled.div`
   max-width: 335px;
   margin: 0 auto;
   height: 100%;
-  position: relative;
+  /* position: relative; */
 
-  &::before {
+  /* &::before {
     content: "";
     position: absolute;
     width: 222.37px;
@@ -51,7 +54,7 @@ export const Wrapper = styled.div`
     transform: rotate(22deg);
     border-radius: 60px 0px 0px 60px;
     background: rgba(89, 177, 122, 0.08);
-  }
+  } */
 `;
 
 export const Title = styled.h2`
