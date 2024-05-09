@@ -3,7 +3,7 @@ import { setModalContent, setModalStatus } from "../../redux/pharmacy/reducer";
 import sprite from "../../assets/icons/sprite.svg";
 import * as s from "./BurgerMenu.styled";
 import { navMenu } from "../../data/navMenu";
-import { NavLink } from "react-router-dom";
+import Button from "../Button/Button";
 
 const BurgerMenu = () => {
   const dispatch = useDispatch();
@@ -38,6 +38,20 @@ const BurgerMenu = () => {
             ))}
           </s.Navigation>
         </div>
+        <s.WrapperBtn>
+          <Button
+            to="/register"
+            name="registerLink"
+            text="Register"
+            onClick={handleCloseBurgerMenu}
+          />
+          <Button
+            to="/login"
+            name="loginLink"
+            text="Login"
+            onClick={handleCloseBurgerMenu}
+          />
+        </s.WrapperBtn>
       </s.Wrapper>
     </>
   );

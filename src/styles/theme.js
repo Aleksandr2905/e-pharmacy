@@ -17,5 +17,6 @@ export const theme = {
     promoBorder: "#f1f1f1",
     buttonBorder: "rgba(241, 241, 241, 0.5)",
     bgCardStore: "#e7f1ed",
+    linkBtn: "rgba(29, 30, 33, 0.4)",
   },
 };
