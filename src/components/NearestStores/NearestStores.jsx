@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { getNearestStores } from "../../redux/pharmacy/operations";
 import { Container } from "../../styles/GlobalStyles";
 import StoresList from "../StoresList/StoresList";
-import * as s from "./MedicineStores.styled";
+import * as s from "./NearestStores.styled";
 
 const MedicineStores = () => {
   const dispatch = useDispatch();

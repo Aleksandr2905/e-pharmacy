@@ -20,11 +20,6 @@ const BurgerMenu = () => {
             <use href={`${sprite}#close`} />
           </svg>
         </s.CloseBtn>
-        <s.IconNav>
-          <svg width={134} height={142}>
-            <use href={`${sprite}#nav-burger`} />
-          </svg>
-        </s.IconNav>
         <div>
           <s.Navigation>
             {navMenu.map((item) => (

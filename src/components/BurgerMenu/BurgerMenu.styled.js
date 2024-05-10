@@ -2,8 +2,12 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 210px;
   height: 100vh;
+  padding-top: 100%;
   position: relative;
   background-color: ${({ theme }) => theme.color.green};
 `;
@@ -26,46 +30,68 @@ export const CloseBtn = styled.button`
   }
 `;
 
-export const IconNav = styled.div`
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-  position: relative;
-  top: 35%;
-  left: 17%;
-  /* height: 100%; */
-`;
-
 export const Navigation = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 36%;
-  left: 21%;
-  gap: 18px;
+  position: relative;
+  gap: 2px;
+
+  & > :nth-child(2) {
+    width: 134px;
+  }
 `;
 
 export const NavBtn = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 46px;
+  border-radius: 60px;
   font-size: 14px;
+  text-align: center;
   font-weight: 400;
   line-height: 100%;
-  padding: 8px 12px;
+  padding: 8px;
+  background-color: ${({ theme }) => theme.color.white};
+  border: 1.5px solid ${({ theme }) => theme.color.promoBorder};
   color: ${({ theme }) => theme.color.grey};
 
   &:hover {
     color: ${({ theme }) => theme.color.white};
-    padding: 8px 12px;
-    border-radius: 24px;
     background-color: ${({ theme }) => theme.color.green};
   }
 
   &.active {
+    border: 8px solid ${({ theme }) => theme.color.white};
     color: ${({ theme }) => theme.color.white};
-    padding: 8px 12px;
-    border-radius: 24px;
     background-color: ${({ theme }) => theme.color.green};
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 0.35em;
+    border-left: 1.5px solid ${({ theme }) => theme.color.promoBorder};
+    border-right: 1.5px solid ${({ theme }) => theme.color.promoBorder};
+    background-color: ${({ theme }) => theme.color.white};
+    top: 3.18em;
+    right: 47.5%;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 0.35em;
+    border-left: 1.5px solid ${({ theme }) => theme.color.promoBorder};
+    border-right: 1.5px solid ${({ theme }) => theme.color.promoBorder};
+    background-color: ${({ theme }) => theme.color.white};
+    bottom: 3.18em;
+    right: 47.5%;
   }
 `;
 
@@ -74,4 +100,6 @@ export const WrapperBtn = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 14px;
+  margin-top: auto;
+  margin-bottom: 40px;
 `;
