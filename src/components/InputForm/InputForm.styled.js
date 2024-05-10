@@ -44,8 +44,19 @@ export const Input = styled.input`
 
   &:focus {
     caret-color: ${({ theme }) => theme.color.placeholder};
-    outline: 1px solid ${({ theme }) => theme.color.placeholder};
-    border: 1px solid ${({ theme }) => theme.color.placeholder};
+    outline: ${(props) =>
+      props.$errors
+        ? props.theme.color.red
+        : props.$isValid
+        ? props.theme.color.green
+        : props.theme.color.borderInput};
+    border: 1px solid
+      ${(props) =>
+        props.$errors
+          ? props.theme.color.red
+          : props.$isValid
+          ? props.theme.color.green
+          : props.theme.color.borderInput};
   }
 `;
 

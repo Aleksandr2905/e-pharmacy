@@ -5,38 +5,49 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "../Button/Button";
 import WrapperSignIn from "../WrapperSignIn/WrapperSignIn";
 import { registerSchema } from "../../helpers/validation";
+import { useDispatch } from "react-redux";
+import { registration } from "../../redux/auth/operations";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors, touchedFields },
+    reset,
   } = useForm({
     mode: "onTouched",
     resolver: yupResolver(registerSchema),
   });
 
-  const username = watch("name");
+  const username = watch("username");
   const email = watch("email");
   const phone = watch("phone");
   const password = watch("password");
 
   const onSubmit = (data) => {
-    console.log(data);
+    dispatch(registration(data)).then((response) => {
+      if (!response.error) {
+        navigate("/login");
+      }
+    });
+    reset();
   };
 
   return (
     <WrapperSignIn>
       <s.Forma onSubmit={handleSubmit(onSubmit)}>
         <InputForm
-          name="name"
+          name="username"
           type="text"
           placeholder="User Name"
           register={register}
           errors={errors}
-          touched={touchedFields.name}
-          isValid={!errors.name && username}
+          touched={touchedFields.username}
+          isValid={!errors.username && username}
         />
         <InputForm
           name="email"
@@ -45,7 +56,7 @@ const RegisterForm = () => {
           register={register}
           errors={errors}
           touched={touchedFields.email}
-          isValid={!errors.name && email}
+          isValid={!errors.email && email}
         />
         <InputForm
           name="phone"
@@ -54,7 +65,7 @@ const RegisterForm = () => {
           register={register}
           errors={errors}
           touched={touchedFields.phone}
-          isValid={!errors.name && phone}
+          isValid={!errors.phone && phone}
         />
         <InputForm
           name="password"
@@ -63,9 +74,9 @@ const RegisterForm = () => {
           register={register}
           errors={errors}
           touched={touchedFields.password}
-          isValid={!errors.name && password}
+          isValid={!errors.password && password}
         />
-        <Button type="button" name="buttonMain" text="Register" />
+        <Button type="submit" name="buttonMain" text="Register" />
         <s.Btn to="/login">Already have an account?</s.Btn>
       </s.Forma>
     </WrapperSignIn>

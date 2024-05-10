@@ -5,7 +5,7 @@ const phoneRegexp = /^\+380\d{2}\d{3}\d{2}\d{2}$/;
 // const passwordRegexp = /^(?=.*[a-zA-Z]{6})(?=.*\d)[a-zA-Z\d]{7}$/;
 
 export const registerSchema = yup.object().shape({
-  name: yup
+  username: yup
     .string()
     .required("Field is required")
     .min(3, "Minimum 3 characters")

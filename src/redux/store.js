@@ -10,6 +10,13 @@ import {
   REGISTER,
 } from "redux-persist/es/constants";
 import { pharmacyReducer } from "./pharmacy/reducer";
+import { authReducer } from "./auth/reducer";
+
+const authPersistConfig = {
+  key: "auth",
+  storage,
+  whitelist: ["token"],
+};
 
 const pharmacyPersistConfig = {
   key: "pharmacy",
@@ -17,6 +24,7 @@ const pharmacyPersistConfig = {
 };
 
 const rootReducer = {
+  auth: persistReducer(authPersistConfig, authReducer),
   pharmacy: persistReducer(pharmacyPersistConfig, pharmacyReducer),
 };
 
