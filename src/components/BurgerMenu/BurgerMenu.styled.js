@@ -101,5 +101,5 @@ export const WrapperBtn = styled.div`
   align-items: center;
   gap: 14px;
   margin-top: auto;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 `;
