@@ -27,6 +27,14 @@ const Button = ({ name, type, text, to, onClick }) => {
         </s.ButtonMain>
       );
       break;
+
+    case "buttonCard":
+      BtnComponent = (
+        <s.ButtonCard to={to} onClick={onClick} aria-label={name}>
+          {text}
+        </s.ButtonCard>
+      );
+      break;
   }
 
   return <>{BtnComponent}</>;

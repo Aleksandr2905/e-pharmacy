@@ -1,12 +1,18 @@
+import { useLocation } from "react-router-dom";
 import sprite from "../../assets/icons/sprite.svg";
 import * as s from "./StoreItem.styled";
+import Button from "../Button/Button";
 
 const StoreItem = ({ store }) => {
+  const { pathname } = useLocation();
+  const medicineStore = pathname === "/medicine-store";
+  const home = pathname === "/";
+
   return (
     <>
       <div>
-        <s.Name text={store.name} length={15} />
-        <s.Location>
+        <s.Name text={store.name} length={medicineStore ? 100 : 15} />
+        <s.Location $isHomePage={home}>
           <svg width={18} height={18}>
             <use href={`${sprite}#map-pin`} />
           </svg>
@@ -15,14 +21,17 @@ const StoreItem = ({ store }) => {
             <s.Text>{store.city}</s.Text>
           </s.Address>
         </s.Location>
-        <s.Phone>
+        <s.Phone $isHomePage={home}>
           <svg width={18} height={18}>
             <use href={`${sprite}#phone`} />
           </svg>
           <s.Text>{store.phone}</s.Text>
         </s.Phone>
+        {medicineStore ? (
+          <Button to="/medicine" name="buttonCard" text="Visit Store" />
+        ) : null}
       </div>
-      <s.RightBlock>
+      <s.RightBlock $isHomePage={home}>
         <s.Rating>
           <svg width={16} height={16}>
             <use href={`${sprite}#star`} />

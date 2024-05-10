@@ -12,7 +12,7 @@ export const Name = styled(EllipsisText)`
 export const Location = styled.div`
   display: flex;
   gap: 8px;
-  margin-top: 32px;
+  margin-top: ${({ $isHomePage }) => ($isHomePage ? "32px" : "20px")};
 `;
 
 export const Address = styled.div`
@@ -33,6 +33,7 @@ export const Phone = styled.div`
   display: flex;
   gap: 8px;
   margin-top: 18px;
+  margin-bottom: ${({ $isHomePage }) => ($isHomePage ? "0" : "36px")};
   position: relative;
 
   &::before {
@@ -41,8 +42,8 @@ export const Phone = styled.div`
     height: 35.383px;
     transform: rotate(22deg);
     position: absolute;
-    left: 191.394px;
-    bottom: -65.113px;
+    left: ${({ $isHomePage }) => ($isHomePage ? "191.394px" : "191.418px")};
+    bottom: ${({ $isHomePage }) => ($isHomePage ? "-65.113px" : "37.418px")};
     border-radius: 20px 0px 0px 20px;
     background: rgba(89, 177, 122, 0.08);
   }
@@ -51,7 +52,8 @@ export const Phone = styled.div`
 export const RightBlock = styled.div`
   position: absolute;
   right: 32px;
-  top: 32px;
+  top: ${({ $isHomePage }) => ($isHomePage ? "32px" : "none")};
+  bottom: ${({ $isHomePage }) => ($isHomePage ? "none" : "32px")};
   display: flex;
   gap: 14px;
   height: 34px;

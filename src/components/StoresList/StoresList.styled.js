@@ -11,7 +11,8 @@ export const Item = styled.li`
   justify-content: space-between;
   position: relative;
   min-width: 335px;
-  padding: 32px 32px 40px;
+  padding: ${({ $isHomePage }) =>
+    $isHomePage ? "32px 32px 40px" : "32px 32px"};
   border-radius: 27px;
   overflow: hidden;
   border: 1.155px solid ${({ theme }) => theme.color.promoBorder};
@@ -23,8 +24,8 @@ export const Item = styled.li`
     height: 35.383px;
     transform: rotate(22deg);
     position: absolute;
-    right: -104.256px;
-    bottom: 51.707px;
+    right: ${({ $isHomePage }) => ($isHomePage ? "-104.256px" : "-109.582px")};
+    bottom: ${({ $isHomePage }) => ($isHomePage ? "51.707px" : "216px")};
     border-radius: 20px 0px 0px 20px;
     background: rgba(89, 177, 122, 0.08);
   }
@@ -35,8 +36,8 @@ export const Item = styled.li`
     height: 35.383px;
     transform: rotate(22deg);
     position: absolute;
-    right: -41.914px;
-    bottom: 29.039px;
+    right: ${({ $isHomePage }) => ($isHomePage ? "-41.914px" : "-38.582px")};
+    bottom: ${({ $isHomePage }) => ($isHomePage ? "29.039px" : "196px")};
     border-radius: 20px 0px 0px 20px;
     background: rgba(89, 177, 122, 0.08);
   }
