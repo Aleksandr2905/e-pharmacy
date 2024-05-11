@@ -28,11 +28,12 @@ const LoginForm = () => {
   const password = watch("password");
 
   const onSubmit = (data) => {
-    dispatch(login(data)).then((response) => {
-      // if (!response.error) {
-      //   navigate("/");
-      // }
-    });
+    dispatch(login(data));
+    //   .then((response) => {
+    //   if (!response.error) {
+    //     navigate("/");
+    //   }
+    // });
     console.log(data);
     reset();
   };
