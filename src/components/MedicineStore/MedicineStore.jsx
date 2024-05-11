@@ -10,8 +10,6 @@ const MedicineStore = () => {
   const dispatch = useDispatch();
   const stores = useSelector(selectStores);
 
-  console.log(stores);
-
   useEffect(() => {
     dispatch(getAllStores());
   }, [dispatch]);

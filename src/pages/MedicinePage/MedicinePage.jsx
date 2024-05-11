@@ -1,5 +1,7 @@
+import Medicine from "../../components/Medicine/Medicine";
+
 const MedicinePage = () => {
-  return <div>MedicinePage</div>;
+  return <Medicine />;
 };
 
 export default MedicinePage;

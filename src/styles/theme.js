@@ -20,5 +20,6 @@ export const theme = {
     borderInput: "rgba(29, 30, 33, 0.10)",
     linkBtn: "rgba(29, 30, 33, 0.4)",
     placeholder: "rgba(29, 30, 33, 0.6)",
+    borderProductCard: "rgba(89, 177, 122, 0.6)",
   },
 };

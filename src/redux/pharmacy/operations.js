@@ -37,3 +37,15 @@ export const getAllStores = createAsyncThunk(
     }
   }
 );
+
+export const getAllProducts = createAsyncThunk(
+  "pharmacy/products",
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await instance.get("/products");
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

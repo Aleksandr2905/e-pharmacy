@@ -1,10 +1,16 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { getAllStores, getNearestStores, getReviews } from "./operations";
+import {
+  getAllProducts,
+  getAllStores,
+  getNearestStores,
+  getReviews,
+} from "./operations";
 
 const initialState = {
   stores: [],
   nearestStores: [],
   reviews: [],
+  products: [],
   isLoading: false,
   error: null,
   openModal: false,
@@ -32,6 +38,9 @@ export const pharmacySlice = createSlice({
       })
       .addCase(getAllStores.fulfilled, (state, { payload }) => {
         state.stores = payload;
+      })
+      .addCase(getAllProducts.fulfilled, (state, { payload }) => {
+        state.products = payload;
       })
 
       .addMatcher(
