@@ -1,1 +1,1 @@
-export const selectUser = (state) => state.auth.user;
+export const selectUsername = (state) => state.auth.username;

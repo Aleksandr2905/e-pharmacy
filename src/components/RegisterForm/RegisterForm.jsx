@@ -30,9 +30,9 @@ const RegisterForm = () => {
 
   const onSubmit = (data) => {
     dispatch(registration(data)).then((response) => {
-      if (!response.error) {
-        navigate("/login");
-      }
+      // if (!response.error) {
+      //   navigate("/login");
+      // }
     });
     reset();
   };
