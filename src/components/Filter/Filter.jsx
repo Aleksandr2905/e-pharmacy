@@ -8,67 +8,47 @@ import InputForm from "../InputForm/InputForm";
 import { useForm } from "react-hook-form";
 
 const options = [
-  { value: "medicine", label: "Medicine" },
-  { value: "heart", label: "Heart" },
-  { value: "head", label: "Head" },
-  { value: "hand", label: "Hand" },
-  { value: "leg", label: "Leg" },
+  { value: "Medicine", label: "Medicine" },
+  { value: "Heart", label: "Heart" },
+  { value: "Head", label: "Head" },
+  { value: "Hand", label: "Hand" },
+  { value: "Leg", label: "Leg" },
 ];
 
 const Filter = ({ totalPages }) => {
   const dispatch = useDispatch();
   const currentPage = useSelector(selectCurrentPage);
   const [selectCategory, setSelectCategory] = useState("");
-  const [searchName, setSearchName] = useState("");
+  const [search, setSearch] = useState("");
   const isDesktop = useScreenWidth();
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-    reset,
   } = useForm({
     mode: "onTouched",
   });
 
-  const searchNameValue = watch("searchName");
+  const searchValue = watch("search");
 
   useEffect(() => {
     dispatch(
       getProducts({
-        category: selectCategory,
-        name: searchName,
+        category: selectCategory.value,
+        name: search,
         page: currentPage,
         limit: isDesktop === "desktop" ? 12 : 9,
       })
     );
-  }, [
-    dispatch,
-    selectCategory,
-    searchName,
-    currentPage,
-    isDesktop,
-    totalPages,
-  ]);
+  }, [dispatch, selectCategory, search, currentPage, isDesktop, totalPages]);
 
   const handleCategoryChange = (selectedOption) => {
-    setSelectCategory(selectedOption.value);
+    setSelectCategory(selectedOption);
     dispatch(
       getProducts({
-        category: selectedOption.value,
-        name: searchName,
-        page: 1,
-        limit: isDesktop === "desktop" ? 12 : 9,
-      })
-    );
-  };
-
-  const handleSearchInputChange = (e) => {
-    setSearchName(searchNameValue);
-    dispatch(
-      getProducts({
-        category: selectCategory,
-        name: searchNameValue,
+        category: selectedOption,
+        name: search,
         page: 1,
         limit: isDesktop === "desktop" ? 12 : 9,
       })
@@ -76,14 +56,28 @@ const Filter = ({ totalPages }) => {
   };
 
   const onSubmit = () => {
+    setSearch(searchValue);
     dispatch(
       getProducts({
-        category: selectCategory,
-        name: searchNameValue,
+        category: selectCategory.value,
+        name: searchValue,
         page: 1,
         limit: isDesktop === "desktop" ? 12 : 9,
       })
     );
+  };
+
+  const handleResetClick = () => {
+    dispatch(
+      getProducts({
+        category: "",
+        name: "",
+        page: 1,
+        limit: isDesktop === "desktop" ? 12 : 9,
+      })
+    );
+    setSearch("");
+    setSelectCategory("");
   };
 
   return (
@@ -92,18 +86,20 @@ const Filter = ({ totalPages }) => {
         options={options}
         placeholder="Product category"
         onChange={handleCategoryChange}
-        value={{ value: selectCategory, label: selectCategory }}
+        value={selectCategory}
       />
 
       <InputForm
-        name="searchName"
+        name="search"
         type="text"
         placeholder="Search medicine"
         register={register}
         errors={errors}
-        onChange={handleSearchInputChange}
       />
       <button type="submit">Filter</button>
+      <button type="reset" onClick={handleResetClick}>
+        Reset
+      </button>
     </form>
   );
 };

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import * as s from "./ProductItem.styled";
+import img from "../../assets/images/mobile/heroMob@1x.png";
 
 const ProductItem = ({ product }) => {
   console.log(product.category);
 
   return (
     <s.Wrapper>
-      <s.Photo src={product.photo} alt={`photo ${product.name} `} />
+      <s.Photo src={product.photo || img} alt={`photo ${product.name} `} />
       <s.Description>
         <s.Top>
           <s.Title>

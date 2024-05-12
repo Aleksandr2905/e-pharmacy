@@ -9,6 +9,7 @@ const InputForm = ({
   errors,
   isValid,
   touched,
+  onClick,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -38,6 +39,11 @@ const InputForm = ({
       {name === "password" && (
         <s.Eyes width="20" height="20" onClick={togglePasswordVisibility}>
           <use href={`${sprite}#${showPassword ? "eye" : "eye-off"}`} />
+        </s.Eyes>
+      )}
+      {name === "search" && (
+        <s.Eyes width="20" height="20" onClick={onClick}>
+          <use href={`${sprite}#search`} />
         </s.Eyes>
       )}
     </s.Wrapper>
