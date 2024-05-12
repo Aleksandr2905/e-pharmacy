@@ -11,6 +11,9 @@ const initialState = {
   nearestStores: [],
   reviews: [],
   products: [],
+  currentPage: 1,
+  totalPages: null,
+  totalProducts: null,
   isLoading: false,
   error: null,
   openModal: false,
@@ -41,6 +44,9 @@ export const pharmacySlice = createSlice({
       })
       .addCase(getProducts.fulfilled, (state, { payload }) => {
         state.products = payload.products;
+        state.currentPage = payload.currentPage;
+        state.totalPages = payload.totalPages;
+        state.totalProducts = payload.totalProducts;
       })
 
       .addMatcher(
