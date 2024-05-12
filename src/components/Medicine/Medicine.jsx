@@ -12,9 +12,9 @@ const Medicine = () => {
 
   console.log("PRODUCTS", products);
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getProducts());
+  // }, [dispatch]);
 
   return (
     <Container>
