@@ -1,6 +1,7 @@
+import sprite from "../../assets/icons/sprite.svg";
 import * as s from "./Button.styled";
 
-const Button = ({ name, type, text, to, onClick }) => {
+const Button = ({ name, type, text, to, onClick, reset }) => {
   let BtnComponent;
 
   switch (name) {
@@ -30,9 +31,27 @@ const Button = ({ name, type, text, to, onClick }) => {
 
     case "buttonCard":
       BtnComponent = (
-        <s.ButtonCard to={to} onClick={onClick} aria-label={name}>
+        <s.ButtonCard type={type} onClick={onClick} aria-label={name}>
           {text}
         </s.ButtonCard>
+      );
+      break;
+
+    case "filter":
+      BtnComponent = (
+        <s.BtnFilter
+          type={type}
+          onClick={onClick}
+          aria-label={name}
+          $reset={reset}
+        >
+          {text === "Filter" && (
+            <svg width={14} height={14}>
+              <use href={`${sprite}#filter`} />
+            </svg>
+          )}
+          {text}
+        </s.BtnFilter>
       );
       break;
   }

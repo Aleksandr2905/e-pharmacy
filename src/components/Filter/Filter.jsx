@@ -6,21 +6,18 @@ import { getProducts } from "../../redux/pharmacy/operations";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
 import InputForm from "../InputForm/InputForm";
 import { useForm } from "react-hook-form";
+import { options } from "../../data/select";
+import { customStyles } from "./CustomStyles";
+import Button from "../Button/Button";
+import * as s from "./Filter.styled";
 
-const options = [
-  { value: "Medicine", label: "Medicine" },
-  { value: "Heart", label: "Heart" },
-  { value: "Head", label: "Head" },
-  { value: "Hand", label: "Hand" },
-  { value: "Leg", label: "Leg" },
-];
-
-const Filter = ({ totalPages }) => {
+const Filter = ({ totalPages, reset }) => {
   const dispatch = useDispatch();
   const currentPage = useSelector(selectCurrentPage);
   const [selectCategory, setSelectCategory] = useState("");
   const [search, setSearch] = useState("");
-  const isDesktop = useScreenWidth();
+  const screen = useScreenWidth();
+  const isDesktop = screen === "desktop";
   const {
     register,
     handleSubmit,
@@ -38,7 +35,7 @@ const Filter = ({ totalPages }) => {
         category: selectCategory.value,
         name: search,
         page: currentPage,
-        limit: isDesktop === "desktop" ? 12 : 9,
+        limit: isDesktop ? 12 : 9,
       })
     );
   }, [dispatch, selectCategory, search, currentPage, isDesktop, totalPages]);
@@ -50,7 +47,7 @@ const Filter = ({ totalPages }) => {
         category: selectedOption,
         name: search,
         page: 1,
-        limit: isDesktop === "desktop" ? 12 : 9,
+        limit: isDesktop ? 12 : 9,
       })
     );
   };
@@ -62,7 +59,7 @@ const Filter = ({ totalPages }) => {
         category: selectCategory.value,
         name: searchValue,
         page: 1,
-        limit: isDesktop === "desktop" ? 12 : 9,
+        limit: isDesktop ? 12 : 9,
       })
     );
   };
@@ -73,7 +70,7 @@ const Filter = ({ totalPages }) => {
         category: "",
         name: "",
         page: 1,
-        limit: isDesktop === "desktop" ? 12 : 9,
+        limit: isDesktop ? 12 : 9,
       })
     );
     setSearch("");
@@ -81,14 +78,15 @@ const Filter = ({ totalPages }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <s.Forma onSubmit={handleSubmit(onSubmit)}>
       <Select
+        styles={customStyles}
         options={options}
         placeholder="Product category"
         onChange={handleCategoryChange}
         value={selectCategory}
+        isSearchable={false}
       />
-
       <InputForm
         name="search"
         type="text"
@@ -96,11 +94,17 @@ const Filter = ({ totalPages }) => {
         register={register}
         errors={errors}
       />
-      <button type="submit">Filter</button>
-      <button type="reset" onClick={handleResetClick}>
-        Reset
-      </button>
-    </form>
+      <s.BtnBlock>
+        <Button type="submit" name="filter" text="Filter" />
+        <Button
+          type="reset"
+          name="filter"
+          text="Reset"
+          onClick={handleResetClick}
+          $reset={reset}
+        />
+      </s.BtnBlock>
+    </s.Forma>
   );
 };
 

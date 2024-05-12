@@ -72,7 +72,7 @@ export const ErrorText = styled.p`
   color: ${({ theme }) => theme.color.red};
 `;
 
-export const Eyes = styled.svg`
+export const Icon = styled.svg`
   position: absolute;
   right: 18px;
   top: 15px;
@@ -81,7 +81,7 @@ export const Eyes = styled.svg`
   cursor: pointer;
 
   & use {
-    stroke: ${({ theme }) => theme.color.placeholder};
+    stroke: ${({ theme }) => theme.color.black};
     fill: transparent;
   }
 `;

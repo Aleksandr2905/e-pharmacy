@@ -9,7 +9,6 @@ const InputForm = ({
   errors,
   isValid,
   touched,
-  onClick,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -37,14 +36,14 @@ const InputForm = ({
       />
       <s.ErrorText>{errors[name]?.message}</s.ErrorText>
       {name === "password" && (
-        <s.Eyes width="20" height="20" onClick={togglePasswordVisibility}>
+        <s.Icon width="20" height="20" onClick={togglePasswordVisibility}>
           <use href={`${sprite}#${showPassword ? "eye" : "eye-off"}`} />
-        </s.Eyes>
+        </s.Icon>
       )}
       {name === "search" && (
-        <s.Eyes width="20" height="20" onClick={onClick}>
+        <s.Icon width="20" height="20">
           <use href={`${sprite}#search`} />
-        </s.Eyes>
+        </s.Icon>
       )}
     </s.Wrapper>
   );
