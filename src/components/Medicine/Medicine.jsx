@@ -8,7 +8,7 @@ import ProductsList from "../ProductsList/ProductsList";
 
 const Medicine = () => {
   const dispatch = useDispatch();
-  const products = useSelector(selectAllProducts);
+  const { products } = useSelector(selectAllProducts);
 
   console.log("PRODUCTS", products);
 
