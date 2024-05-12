@@ -40,7 +40,7 @@ export const getAllStores = createAsyncThunk(
 
 export const getProducts = createAsyncThunk(
   "pharmacy/products",
-  async (_, { rejectWithValue }) => {
+  async (body, { rejectWithValue }) => {
     try {
       const { category = "", name = "", page = "", limit = "" } = body;
       const { data } = await instance.get(

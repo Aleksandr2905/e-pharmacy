@@ -3,6 +3,8 @@ import Button from "../Button/Button";
 import * as s from "./ProductItem.styled";
 
 const ProductItem = ({ product }) => {
+  console.log(product.category);
+
   return (
     <s.Wrapper>
       <s.Photo src={product.photo} alt={`photo ${product.name} `} />
