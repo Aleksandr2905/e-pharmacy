@@ -10,7 +10,7 @@ const initialState = {
   stores: [],
   nearestStores: [],
   reviews: [],
-  products: [],
+  products: null,
   isLoading: false,
   error: null,
   openModal: false,
