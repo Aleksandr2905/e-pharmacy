@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { selectAllProducts } from "../../redux/pharmacy/selectors";
+import { selectProducts } from "../../redux/pharmacy/selectors";
 import { useEffect } from "react";
 import { getProducts } from "../../redux/pharmacy/operations";
 import { Container } from "../../styles/GlobalStyles";
@@ -8,7 +8,7 @@ import ProductsList from "../ProductsList/ProductsList";
 
 const Medicine = () => {
   const dispatch = useDispatch();
-  const { products } = useSelector(selectAllProducts);
+  const { products } = useSelector(selectProducts);
 
   console.log("PRODUCTS", products);
 

@@ -2,13 +2,17 @@ import ProductItem from "../ProductItem/ProductItem";
 import * as s from "./ProductsList.styled";
 
 const ProductsList = ({ products }) => {
+  console.log("PRODUCTS LIST", products);
+
   return (
     <s.Wrapper>
-      {products.map((product) => (
-        <s.Item key={product._id}>
-          <ProductItem product={product} />
-        </s.Item>
-      ))}
+      {products &&
+        products.length > 0 &&
+        products.map((product) => (
+          <s.Item key={product._id}>
+            <ProductItem product={product} />
+          </s.Item>
+        ))}
     </s.Wrapper>
   );
 };
