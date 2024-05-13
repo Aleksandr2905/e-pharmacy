@@ -7,8 +7,11 @@ export const Wrapper = styled.div`
   justify-content: center;
   width: 210px;
   height: 100vh;
-  padding-top: 100%;
-  position: relative;
+  padding-top: 50%;
+  /* position: relative; */
+  position: fixed;
+  top: 0;
+  right: 0;
   background-color: ${({ theme }) => theme.color.green};
 `;
 

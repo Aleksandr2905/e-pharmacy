@@ -69,7 +69,7 @@ const Modal = ({ open, onClose, children }) => {
           animate="visible"
           exit="exit"
         >
-          <s.Backdrop onClick={handleBackdropClick} $burger>
+          <s.Backdrop onClick={handleBackdropClick}>
             <s.ModalContent>{children}</s.ModalContent>
           </s.Backdrop>
         </motion.div>

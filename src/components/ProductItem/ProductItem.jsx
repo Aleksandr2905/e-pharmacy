@@ -2,9 +2,27 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import * as s from "./ProductItem.styled";
 import img from "../../assets/images/mobile/heroMob@1x.png";
+import { useDispatch, useSelector } from "react-redux";
+import { selectOpenModal } from "../../redux/pharmacy/selectors";
+import { setModalContent, setModalStatus } from "../../redux/pharmacy/reducer";
 
 const ProductItem = ({ product }) => {
-  console.log(product.category);
+  const dispatch = useDispatch();
+  const modalStatus = useSelector(selectOpenModal);
+  const isLoggedIn = false;
+
+  const handleOpenLoginModal = () => {
+    dispatch(setModalStatus(!modalStatus));
+    dispatch(setModalContent("LoginModal"));
+  };
+
+  const handleAddToCart = (id) => {
+    if (!isLoggedIn) {
+      handleOpenLoginModal();
+    } else {
+      console.log("ADD PRODUCT");
+    }
+  };
 
   return (
     <s.Wrapper>
@@ -18,7 +36,12 @@ const ProductItem = ({ product }) => {
           <s.Price>৳{product.price}</s.Price>
         </s.Top>
         <s.Bottom>
-          <Button type="button" name="buttonCard" text="Add to cart" />
+          <Button
+            type="button"
+            name="buttonAdd"
+            text="Add to cart"
+            onClick={handleAddToCart}
+          />
           <s.Details to="/product">Details</s.Details>
         </s.Bottom>
       </s.Description>

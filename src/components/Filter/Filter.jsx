@@ -11,7 +11,7 @@ import { customStyles } from "./CustomStyles";
 import Button from "../Button/Button";
 import * as s from "./Filter.styled";
 
-const Filter = ({ totalPages, reset }) => {
+const Filter = ({ totalPages}) => {
   const dispatch = useDispatch();
   const currentPage = useSelector(selectCurrentPage);
   const [selectCategory, setSelectCategory] = useState("");
@@ -101,7 +101,6 @@ const Filter = ({ totalPages, reset }) => {
           name="filter"
           text="Reset"
           onClick={handleResetClick}
-          $reset={reset}
         />
       </s.BtnBlock>
     </s.Forma>

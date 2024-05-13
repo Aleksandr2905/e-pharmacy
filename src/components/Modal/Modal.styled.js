@@ -9,13 +9,13 @@ export const Backdrop = styled.div`
   overflow: hidden;
   background: rgba(29, 30, 33, 0.45);
   display: flex;
-  justify-content: ${(props) => (props.$burger ? "flex-end" : "center")};
+  justify-content: center;
   align-items: center;
 `;
 
 export const ModalContent = styled.div`
-  background: white;
-  /* max-height: 100vh; */
+  /* background: transparent; */
+  max-height: 100vh;
   /* overflow-y: auto; */
 
   /* &::-webkit-scrollbar {
