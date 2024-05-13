@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import * as s from "./ProductItem.styled";
-import img from "../../assets/images/mobile/heroMob@1x.png";
 import { useDispatch, useSelector } from "react-redux";
 import { selectOpenModal } from "../../redux/pharmacy/selectors";
 import { setModalContent, setModalStatus } from "../../redux/pharmacy/reducer";
@@ -16,7 +15,7 @@ const ProductItem = ({ product }) => {
     dispatch(setModalContent("LoginModal"));
   };
 
-  const handleAddToCart = (id) => {
+  const handleAddToCart = () => {
     if (!isLoggedIn) {
       handleOpenLoginModal();
     } else {
@@ -26,7 +25,7 @@ const ProductItem = ({ product }) => {
 
   return (
     <s.Wrapper>
-      <s.Photo src={product.photo || img} alt={`photo ${product.name} `} />
+      <s.Photo src={product.photo} alt={`photo ${product.name} `} />
       <s.Description>
         <s.Top>
           <s.Title>
