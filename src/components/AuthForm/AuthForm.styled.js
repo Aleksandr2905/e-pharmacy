@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import pill from "../../assets/images/pill@1x.png";
 import elements from "../../assets/images/mobile/elements.png";
 
@@ -56,5 +57,31 @@ export const Title = styled.h2`
   }
   & span {
     color: ${({ theme }) => theme.color.green};
+  }
+`;
+
+export const Forma = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 310px;
+
+  & > :nth-last-child(2) {
+    margin-top: auto;
+  }
+`;
+
+export const Btn = styled(Link)`
+  text-align: center;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  transition: all 0.3s;
+  color: ${({ theme }) => theme.color.linkBtn};
+
+  &:hover {
+    color: ${({ theme }) => theme.color.darkGreen};
   }
 `;
