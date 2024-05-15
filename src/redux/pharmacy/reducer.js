@@ -34,6 +34,9 @@ export const pharmacySlice = createSlice({
     setModalContent: (state, { payload }) => {
       state.modalContent = payload;
     },
+    setCurrentPage: (state, { payload }) => {
+      state.currentPage = payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -101,5 +104,6 @@ export const pharmacySlice = createSlice({
   },
 });
 
-export const { setModalStatus, setModalContent } = pharmacySlice.actions;
+export const { setModalStatus, setModalContent, setCurrentPage } =
+  pharmacySlice.actions;
 export const pharmacyReducer = pharmacySlice.reducer;

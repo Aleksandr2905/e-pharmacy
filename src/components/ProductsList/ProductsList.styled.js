@@ -4,6 +4,7 @@ export const Wrapper = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 40px;
 `;
 
 export const Item = styled.li`
