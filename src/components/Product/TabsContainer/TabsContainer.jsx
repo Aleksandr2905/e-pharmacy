@@ -45,8 +45,7 @@ const TabsContainer = () => {
           <s.Main>{description.main}</s.Main>
           {description.prescription.map((item) => (
             <s.Prescription key={item.title}>
-              <span>{item.title}</span>
-              {item.text}
+              <span>{item.title}</span> {item.text}
             </s.Prescription>
           ))}
         </s.Container>
