@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Container } from "../../styles/GlobalStyles";
 import * as s from "./NotFound.styled";
 import Button from "../Button/Button";

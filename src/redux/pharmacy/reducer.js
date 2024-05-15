@@ -4,6 +4,8 @@ import {
   getAllStores,
   getNearestStores,
   getReviews,
+  getProductById,
+  addCart,
 } from "./operations";
 
 const initialState = {
@@ -11,6 +13,8 @@ const initialState = {
   nearestStores: [],
   reviews: [],
   products: [],
+  product: null,
+  cart: [],
   currentPage: 1,
   totalPages: null,
   totalProducts: null,
@@ -48,23 +52,47 @@ export const pharmacySlice = createSlice({
         state.totalPages = payload.totalPages;
         state.totalProducts = payload.totalProducts;
       })
+      .addCase(getProductById.fulfilled, (state, { payload }) => {
+        state.product = payload;
+      })
+      .addCase(addCart.fulfilled, (state, { payload }) => {
+        state.cart = payload;
+      })
 
       .addMatcher(
-        isAnyOf(getNearestStores.pending, getReviews.pending),
+        isAnyOf(
+          getNearestStores.pending,
+          getReviews.pending,
+          getAllStores.pending,
+          getProducts.pending,
+          getProductById.pending
+        ),
         (state) => {
           state.error = null;
           state.isLoading = true;
         }
       )
       .addMatcher(
-        isAnyOf(getNearestStores.fulfilled, getReviews.fulfilled),
+        isAnyOf(
+          getNearestStores.fulfilled,
+          getReviews.fulfilled,
+          getAllStores.fulfilled,
+          getProducts.fulfilled,
+          getProductById.fulfilled
+        ),
         (state) => {
           state.error = null;
           state.isLoading = false;
         }
       )
       .addMatcher(
-        isAnyOf(getNearestStores.rejected, getReviews.rejected),
+        isAnyOf(
+          getNearestStores.rejected,
+          getReviews.rejected,
+          getAllStores.rejected,
+          getProducts.rejected,
+          getProductById.rejected
+        ),
         (state, { payload }) => {
           state.isLoading = false;
           state.error = payload;

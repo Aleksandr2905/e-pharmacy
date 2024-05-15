@@ -11,11 +11,9 @@ import ProductsList from "../ProductsList/ProductsList";
 import Filter from "../Filter/Filter";
 
 const Medicine = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const products = useSelector(selectProducts);
   const totalPages = useSelector(selectTotalPages);
-
-  console.log("PRODUCTS", products);
 
   // useEffect(() => {
   //   dispatch(getProducts());

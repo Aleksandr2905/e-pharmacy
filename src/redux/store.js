@@ -1,14 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
-import { persistStore, persistReducer } from "redux-persist";
 import {
+  persistStore,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist/es/constants";
+} from "redux-persist";
 import { pharmacyReducer } from "./pharmacy/reducer";
 import { authReducer } from "./auth/reducer";
 
@@ -23,13 +24,11 @@ const pharmacyPersistConfig = {
   storage,
 };
 
-const rootReducer = {
-  auth: persistReducer(authPersistConfig, authReducer),
-  pharmacy: persistReducer(pharmacyPersistConfig, pharmacyReducer),
-};
-
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    auth: persistReducer(authPersistConfig, authReducer),
+    pharmacy: persistReducer(pharmacyPersistConfig, pharmacyReducer),
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

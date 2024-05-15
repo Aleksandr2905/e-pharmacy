@@ -1,26 +1,59 @@
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../Button/Button";
 import * as s from "./ProductItem.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectOpenModal } from "../../redux/pharmacy/selectors";
 import { setModalContent, setModalStatus } from "../../redux/pharmacy/reducer";
+import { addCart, getProductById } from "../../redux/pharmacy/operations";
+import Counter from "../Counter/Counter";
+import { useState } from "react";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
   const modalStatus = useSelector(selectOpenModal);
-  const isLoggedIn = false;
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const [amount, setAmount] = useState(0);
+  const isLoggedIn = true;
+
+  const productPage = pathname === "/product";
 
   const handleOpenLoginModal = () => {
     dispatch(setModalStatus(!modalStatus));
     dispatch(setModalContent("LoginModal"));
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (id) => {
     if (!isLoggedIn) {
       handleOpenLoginModal();
     } else {
+      dispatch(
+        addCart({
+          productId: id,
+          quantity: amount,
+        })
+      );
       console.log("ADD PRODUCT");
     }
+  };
+
+  const handleDetails = (id) => {
+    dispatch(getProductById(id)).then(() => {
+      navigate("/product");
+    });
+  };
+
+  const handleIncreaseAmount = () => {
+    setAmount((prev) => prev + 1);
+  };
+
+  const handleDecreaseAmount = () => {
+    if (amount === 0) {
+      return;
+    }
+    setAmount((prev) => prev - 1);
   };
 
   return (
@@ -34,14 +67,24 @@ const ProductItem = ({ product }) => {
           </s.Title>
           <s.Price>৳{product.price}</s.Price>
         </s.Top>
-        <s.Bottom>
+        <s.Bottom $isProductPage={productPage}>
           <Button
             type="button"
             name="buttonAdd"
             text="Add to cart"
-            onClick={handleAddToCart}
+            onClick={() => handleAddToCart(product._id)}
           />
-          <s.Details to="/product">Details</s.Details>
+          {productPage ? (
+            <Counter
+              amount={amount}
+              onIncrease={handleIncreaseAmount}
+              onDecrease={handleDecreaseAmount}
+            />
+          ) : (
+            <s.Details type="button" onClick={() => handleDetails(product._id)}>
+              Details
+            </s.Details>
+          )}
         </s.Bottom>
       </s.Description>
     </s.Wrapper>

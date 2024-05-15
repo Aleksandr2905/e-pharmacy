@@ -2,8 +2,6 @@ import ProductItem from "../ProductItem/ProductItem";
 import * as s from "./ProductsList.styled";
 
 const ProductsList = ({ products }) => {
-  console.log("PRODUCTS LIST", products);
-
   return (
     <s.Wrapper>
       {products &&

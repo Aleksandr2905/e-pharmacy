@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -62,14 +61,18 @@ export const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: ${({ $isProductPage }) =>
+    $isProductPage ? "row-reverse" : "row"};
 `;
 
-export const Details = styled(Link)`
+export const Details = styled.button`
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
   text-decoration-line: underline;
   transition: all 0.3s;
+  border: none;
+  background-color: transparent;
   font-feature-settings: "clig" off, "liga" off;
   color: ${({ theme }) => theme.color.black};
 

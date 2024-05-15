@@ -1,13 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { instance, setToken } from "../instance";
+// import { instance, setToken } from "../instance";
 import { toast } from "react-toastify";
+import { signin, signup } from "../../service/api";
 
 export const registration = createAsyncThunk(
   "user/register",
   async (credentials, { rejectWithValue }) => {
     try {
-      const { data } = await instance.post("/user/register", credentials);
-      setToken(data.token);
+      const data = await signup(credentials);
       toast.success("Successful operation");
       return data;
     } catch (error) {
@@ -35,8 +35,7 @@ export const login = createAsyncThunk(
   "user/login",
   async (credentials, { rejectWithValue }) => {
     try {
-      const token = await instance.post("/user/login", credentials);
-      setToken(token);
+      const { data } = await signin(credentials);
       toast.success("Successful operation");
       return data;
     } catch (error) {
@@ -54,8 +53,8 @@ export const login = createAsyncThunk(
           toast.error("Server error");
           break;
         default:
+          return rejectWithValue(error);
       }
-      return rejectWithValue(error.message);
     }
   }
 );
