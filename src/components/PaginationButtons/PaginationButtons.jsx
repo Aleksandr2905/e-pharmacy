@@ -1,17 +1,29 @@
 import * as React from "react";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import { useDispatch, useSelector } from "react-redux";
+import { selectTotalPages } from "../../redux/pharmacy/selectors";
+import { setCurrentPage } from "../../redux/pharmacy/reducer";
 
 const PaginationButtons = () => {
+  const totalPages = useSelector(selectTotalPages);
+  const dispatch = useDispatch();
+
+  console.log(totalPages);
+
+  const handleChange = (e, p) => {
+    dispatch(setCurrentPage(p));
+  };
   return (
     <Stack spacing={2}>
       <Pagination
-        count={10}
+        count={totalPages}
         showFirstButton
         showLastButton
         defaultPage={1}
         siblingCount={0}
         boundaryCount={0}
+        onChange={handleChange}
         variant="outlined"
         sx={{
           "& .MuiPaginationItem-root": {
