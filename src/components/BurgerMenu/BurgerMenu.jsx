@@ -1,9 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setModalContent, setModalStatus } from "../../redux/pharmacy/reducer";
 import sprite from "../../assets/icons/sprite.svg";
 import * as s from "./BurgerMenu.styled";
 import { navMenu } from "../../data/navMenu";
 import Button from "../Button/Button";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import AuthButton from "../AuthButton/AuthButton";
 
 const BurgerMenu = () => {
   const dispatch = useDispatch();
@@ -34,18 +36,7 @@ const BurgerMenu = () => {
           </s.Navigation>
         </div>
         <s.WrapperBtn>
-          <Button
-            to="/register"
-            name="registerLink"
-            text="Register"
-            onClick={handleCloseBurgerMenu}
-          />
-          <Button
-            to="/login"
-            name="loginLink"
-            text="Login"
-            onClick={handleCloseBurgerMenu}
-          />
+          <AuthButton handleCloseBurgerMenu={handleCloseBurgerMenu} />
         </s.WrapperBtn>
       </s.Wrapper>
     </>

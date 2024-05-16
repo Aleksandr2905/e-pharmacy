@@ -4,9 +4,9 @@ const BASE_URL = "https://e-pharmacy-backend-q1kh.onrender.com/api";
 
 export const instance = axios.create({
   baseURL: BASE_URL,
-  // headers: {
-  //   "Content-Type": "application/json",
-  // },
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 export const setToken = (token) => {

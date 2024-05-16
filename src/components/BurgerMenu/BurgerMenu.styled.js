@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
   width: 210px;
   height: 100vh;
   padding-top: 50%;
-  /* position: relative; */
   position: fixed;
   top: 0;
   right: 0;

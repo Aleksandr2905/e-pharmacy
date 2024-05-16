@@ -21,6 +21,14 @@ const Button = ({ name, type, text, to, onClick }) => {
       );
       break;
 
+    case "logout":
+      BtnComponent = (
+        <s.BtnLogout to={to} onClick={onClick} aria-label={name}>
+          {text}
+        </s.BtnLogout>
+      );
+      break;
+
     case "buttonMain":
       BtnComponent = (
         <s.ButtonMain type={type} onClick={onClick} aria-label={name}>

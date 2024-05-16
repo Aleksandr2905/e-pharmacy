@@ -37,6 +37,27 @@ export const LinkRegister = styled(Link)`
   }
 `;
 
+export const BtnLogout = styled.button`
+  display: flex;
+  padding: 13px 32px;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border-radius: 60px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  background-color: transparent;
+  transition: all 0.3s;
+  border: 1px solid ${({ theme }) => theme.color.buttonBorder};
+  color: ${({ theme }) => theme.color.promoBorder};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.promoBorder};
+    color: ${({ theme }) => theme.color.green};
+  }
+`;
+
 export const ButtonMain = styled.button`
   display: flex;
   padding: 13px 13px;
