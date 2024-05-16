@@ -9,6 +9,7 @@ const AuthButton = ({ handleCloseBurgerMenu }) => {
 
   const handleLogOut = () => {
     dispatch(logout());
+    handleCloseBurgerMenu();
   };
 
   return (
