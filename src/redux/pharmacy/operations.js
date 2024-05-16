@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { instance } from "../instance";
+import { instance, setToken } from "../instance";
 import { toast } from "react-toastify";
 
 export const getNearestStores = createAsyncThunk(
@@ -68,11 +68,24 @@ export const getProductById = createAsyncThunk(
 
 export const addCart = createAsyncThunk(
   "pharmacy/cartAdd",
-  async (body, { rejectWithValue, getState }) => {
+  async (body, { rejectWithValue }) => {
     try {
-      // setToken(getState().auth.token);
+      setToken(token);
       const { data } = await instance.patch("/cart/add", body);
       toast.success("Product added to cart");
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getCartItems = createAsyncThunk(
+  "pharmacy/cartItems",
+  async (_, { rejectWithValue }) => {
+    try {
+      setToken(token);
+      const { data } = await instance.get("/cart");
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

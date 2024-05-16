@@ -1,10 +1,8 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { login, logout, registration } from "./operations";
+import { getUserInfo, login, logout, registration } from "./operations";
 
 const initialState = {
-  username: "",
-  email: "",
-  phone: "",
+  user: { username: "", email: "", phone: "" },
   token: "",
   error: null,
   isLoggedIn: false,
@@ -17,20 +15,20 @@ export const authSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(registration.fulfilled, (state, { payload }) => {
-        state.username = payload.user;
-        state.email = payload.email;
-        state.phone = payload.phone;
+        state.user = payload.user;
         state.token = payload.token;
         state.isLoggedIn = true;
       })
       .addCase(login.fulfilled, (state, { payload }) => {
-        state.username = payload;
-        state.email = payload;
-        state.token = payload;
+        state.user = payload.user;
+        state.token = payload.token;
         state.isLoggedIn = true;
       })
       .addCase(logout.fulfilled, () => {
         return initialState;
+      })
+      .addCase(getUserInfo.fulfilled, (state, { payload }) => {
+        state.user = payload.user;
       })
 
       .addMatcher(

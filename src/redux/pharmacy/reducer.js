@@ -6,6 +6,7 @@ import {
   getReviews,
   getProductById,
   addCart,
+  getCartItems,
 } from "./operations";
 
 const initialState = {
@@ -58,6 +59,10 @@ export const pharmacySlice = createSlice({
       .addCase(getProductById.fulfilled, (state, { payload }) => {
         state.product = payload;
       })
+      .addCase(getCartItems.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.cart = payload;
+      })
       .addCase(addCart.fulfilled, (state, { payload }) => {
         state.cart = payload;
       })
@@ -68,7 +73,8 @@ export const pharmacySlice = createSlice({
           getReviews.pending,
           getAllStores.pending,
           getProducts.pending,
-          getProductById.pending
+          getProductById.pending,
+          getCartItems.pending
         ),
         (state) => {
           state.error = null;
@@ -81,7 +87,8 @@ export const pharmacySlice = createSlice({
           getReviews.fulfilled,
           getAllStores.fulfilled,
           getProducts.fulfilled,
-          getProductById.fulfilled
+          getProductById.fulfilled,
+          getCartItems.fulfilled
         ),
         (state) => {
           state.error = null;
@@ -94,7 +101,8 @@ export const pharmacySlice = createSlice({
           getReviews.rejected,
           getAllStores.rejected,
           getProducts.rejected,
-          getProductById.rejected
+          getProductById.rejected,
+          getCartItems.rejected
         ),
         (state, { payload }) => {
           state.isLoading = false;

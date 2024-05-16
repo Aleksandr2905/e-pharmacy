@@ -1,16 +1,20 @@
 import { useLocation } from "react-router-dom";
 import Logo from "../Logo/Logo";
-import { Wrapper } from "./Header.styled";
+import * as s from "./Header.styled";
 import BurgerButton from "../BurgerButton/BurgerButton";
+import UserBar from "../UserBar/UserBar";
 
 const Header = () => {
   const { pathname } = useLocation();
 
   return (
-    <Wrapper $isHomePage={pathname === "/"}>
+    <s.Wrapper $isHomePage={pathname === "/"}>
       <Logo />
-      <BurgerButton />
-    </Wrapper>
+      <s.UserStatus>
+        <UserBar $isHomePage={pathname === "/"} />
+        <BurgerButton />
+      </s.UserStatus>
+    </s.Wrapper>
   );
 };
 

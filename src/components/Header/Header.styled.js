@@ -7,3 +7,9 @@ export const Wrapper = styled.header`
   background-color: ${({ $isHomePage, theme }) =>
     $isHomePage ? theme.color.green : "transparent"};
 `;
+
+export const UserStatus = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;

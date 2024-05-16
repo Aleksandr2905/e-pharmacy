@@ -19,7 +19,7 @@ const AuthButton = ({ handleCloseBurgerMenu }) => {
           type="button"
           name="logout"
           text="Log out"
-          onClick={handleLogOut}
+          onClick={() => handleLogOut()}
         />
       ) : (
         <>

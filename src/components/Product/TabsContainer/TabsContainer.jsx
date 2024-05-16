@@ -19,9 +19,6 @@ const TabsContainer = () => {
     setShowDescription(false);
   };
 
-  console.log("description", description);
-  console.log("reviews", reviews);
-
   return (
     <s.Wrapper>
       <s.BtnWrapper>
