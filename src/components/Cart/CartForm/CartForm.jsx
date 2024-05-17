@@ -7,7 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCart } from "../../../redux/pharmacy/selectors";
 import Button from "../../Button/Button";
 import { cartSchema } from "../../../helpers/validation";
-import { cartCheckout } from "../../../redux/pharmacy/operations";
+import {
+  cartCheckout,
+  deleteCart,
+  updateCart,
+} from "../../../redux/pharmacy/operations";
 import { toast } from "react-toastify";
 
 const CartForm = () => {
@@ -32,8 +36,10 @@ const CartForm = () => {
   });
   const total = Number(cart.total).toFixed(2);
 
+  console.log(cart);
+
   const onSubmit = (data) => {
-    if (!cart || !cart.products || cart.products.length === 0) {
+    if (!cart || !cart.cartProducts || cart.cartProducts.length === 0) {
       toast.error("Please select product to make an order");
       return;
     }

@@ -14,7 +14,7 @@ export const Wrapper = styled.li`
 
   &::after {
     content: "";
-    display: ${(props) => (props.hasLine ? "block" : "none")};
+    display: ${(props) => (props.$hasLine ? "block" : "none")};
     width: 100%;
     height: 1px;
     background-color: ${({ theme }) => theme.color.borderInput};
