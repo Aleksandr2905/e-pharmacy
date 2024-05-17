@@ -33,10 +33,10 @@ const CartForm = () => {
   const total = Number(cart.total).toFixed(2);
 
   const onSubmit = (data) => {
-    // if (!cart || !cart.cartProducts || cart.cartProducts.length === 0) {
-    //   toast.error("Please select product to make an order");
-    //   return;
-    // }
+    if (!cart || !cart.cartProducts || cart.cartProducts.length === 0) {
+      toast.error("Please select product to make an order");
+      return;
+    }
     dispatch(cartCheckout(data));
     reset();
   };
