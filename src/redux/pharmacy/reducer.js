@@ -7,6 +7,10 @@ import {
   getProductById,
   addCart,
   getCartItems,
+  cartCheckout,
+  updateCart,
+  deleteCart,
+  decreaseQuantity,
 } from "./operations";
 
 const initialState = {
@@ -60,10 +64,21 @@ export const pharmacySlice = createSlice({
         state.product = payload;
       })
       .addCase(getCartItems.fulfilled, (state, { payload }) => {
-        state.isLoading = false;
         state.cart = payload;
       })
       .addCase(addCart.fulfilled, (state, { payload }) => {
+        state.cart = payload;
+      })
+      .addCase(updateCart.fulfilled, (state, { payload }) => {
+        state.cart = payload;
+      })
+      .addCase(cartCheckout.fulfilled, (state, { payload }) => {
+        state.cart = payload;
+      })
+      .addCase(deleteCart.fulfilled, (state, { payload }) => {
+        state.cart = payload;
+      })
+      .addCase(decreaseQuantity.fulfilled, (state, { payload }) => {
         state.cart = payload;
       })
 
@@ -74,7 +89,12 @@ export const pharmacySlice = createSlice({
           getAllStores.pending,
           getProducts.pending,
           getProductById.pending,
-          getCartItems.pending
+          getCartItems.pending,
+          addCart.pending,
+          updateCart.pending,
+          cartCheckout.pending,
+          deleteCart.pending,
+          decreaseQuantity.pending
         ),
         (state) => {
           state.error = null;
@@ -88,7 +108,12 @@ export const pharmacySlice = createSlice({
           getAllStores.fulfilled,
           getProducts.fulfilled,
           getProductById.fulfilled,
-          getCartItems.fulfilled
+          getCartItems.fulfilled,
+          addCart.fulfilled,
+          updateCart.fulfilled,
+          cartCheckout.fulfilled,
+          deleteCart.fulfilled,
+          decreaseQuantity.fulfilled
         ),
         (state) => {
           state.error = null;
@@ -102,7 +127,12 @@ export const pharmacySlice = createSlice({
           getAllStores.rejected,
           getProducts.rejected,
           getProductById.rejected,
-          getCartItems.rejected
+          getCartItems.rejected,
+          addCart.rejected,
+          updateCart.rejected,
+          cartCheckout.rejected,
+          deleteCart.rejected,
+          decreaseQuantity.rejected
         ),
         (state, { payload }) => {
           state.isLoading = false;

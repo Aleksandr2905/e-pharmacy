@@ -4,19 +4,23 @@ import * as s from "./ProductItem.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectOpenModal } from "../../redux/pharmacy/selectors";
 import { setModalContent, setModalStatus } from "../../redux/pharmacy/reducer";
-import { addCart, getProductById } from "../../redux/pharmacy/operations";
+import {
+  addCart,
+  getCartItems,
+  getProductById,
+} from "../../redux/pharmacy/operations";
 import Counter from "../Counter/Counter";
 import { useState } from "react";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { toast } from "react-toastify";
 
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
   const modalStatus = useSelector(selectOpenModal);
-  // const isLoggedIn = useSelector(selectIsLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const [amount, setAmount] = useState(0);
-  const isLoggedIn = true;
+  const [amount, setAmount] = useState(1);
 
   const productPage = pathname === "/product";
 
@@ -29,12 +33,17 @@ const ProductItem = ({ product }) => {
     if (!isLoggedIn) {
       handleOpenLoginModal();
     } else {
+      if (amount === 0) {
+        toast.warn("Please select the product quantity");
+        return;
+      }
       dispatch(
         addCart({
           productId: id,
           quantity: amount,
         })
       );
+      dispatch(getCartItems());
       console.log("ADD PRODUCT");
     }
   };

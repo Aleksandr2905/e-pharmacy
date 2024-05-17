@@ -3,6 +3,7 @@ import sprite from "../../assets/icons/sprite.svg";
 import * as s from "./InputForm.styled";
 
 const InputForm = ({
+  label,
   name,
   placeholder,
   register,
@@ -26,7 +27,9 @@ const InputForm = ({
 
   return (
     <s.Wrapper>
+      <s.Label htmlFor={name}>{label}</s.Label>
       <s.Input
+        id={name}
         name={name}
         type={getInputType()}
         placeholder={placeholder}

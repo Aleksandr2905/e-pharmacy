@@ -12,18 +12,12 @@ const UserBar = ({ $isHomePage }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const cart = useSelector(selectCart);
   const name = useSelector(selectUsername);
-  const quantity = cart?.products?.length || 0;
-
-  console.log(name);
+  const quantity = cart?.cartProducts?.length || 0;
 
   useEffect(() => {
     dispatch(getCartItems());
     dispatch(getUserInfo());
   }, [dispatch, quantity]);
-
-  //   useEffect(() => {
-  //     dispatch(getUserInfo());
-  //   }, [dispatch]);
 
   return isLoggedIn ? (
     <s.Wrapper>

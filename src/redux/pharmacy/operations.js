@@ -68,9 +68,9 @@ export const getProductById = createAsyncThunk(
 
 export const addCart = createAsyncThunk(
   "pharmacy/cartAdd",
-  async (body, { rejectWithValue }) => {
+  async (body, { rejectWithValue, getState }) => {
     try {
-      setToken(token);
+      setToken(getState().auth.token);
       const { data } = await instance.patch("/cart/add", body);
       toast.success("Product added to cart");
       return data;
@@ -82,10 +82,65 @@ export const addCart = createAsyncThunk(
 
 export const getCartItems = createAsyncThunk(
   "pharmacy/cartItems",
-  async (_, { rejectWithValue }) => {
+  async (_, { rejectWithValue, getState }) => {
     try {
-      setToken(token);
+      setToken(getState().auth.token);
       const { data } = await instance.get("/cart");
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateCart = createAsyncThunk(
+  "pharmacy/cartUpdate",
+  async (body, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      const { data } = await instance.put("/cart/update", body);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const cartCheckout = createAsyncThunk(
+  "pharmacy/cartCheckout",
+  async (body, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      const { data } = await instance.post("/cart/checkout", body);
+      toast.success("The order is successful.");
+      return data;
+    } catch (error) {
+      toast.error("Something went wrong, please try again.");
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteCart = createAsyncThunk(
+  "pharmacy/cartRemove",
+  async (id, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      const { data } = await instance.delete(`/cart/remove/${id}`);
+      toast.success("Product removed from cart");
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const decreaseQuantity = createAsyncThunk(
+  "pharmacy/cartDecrease",
+  async (body, { rejectWithValue, getState }) => {
+    try {
+      setToken(getState().auth.token);
+      const { data } = await instance.patch("/cart/decrease", body);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

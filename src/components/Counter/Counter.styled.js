@@ -4,9 +4,9 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 108px;
-  height: 44px;
-  padding: 12px 18px;
+  width: ${({ $cart }) => ($cart ? "95px" : "108px")};
+  height: ${({ $cart }) => ($cart ? "32px" : "44px")};
+  padding: ${({ $cart }) => ($cart ? "7px 14px" : "12px 18px")};
   border-radius: 60px;
   border: 1px solid rgba(29, 30, 33, 0.1);
 `;

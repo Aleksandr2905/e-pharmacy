@@ -8,6 +8,15 @@ export const Wrapper = styled.div`
   position: relative;
 `;
 
+export const Label = styled.label`
+  margin: 0 auto 8px 18px;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.28;
+  color: ${({ theme }) => theme.color.black};
+`;
+
 export const Input = styled.input`
   width: 100%;
   padding: 13px 18px;

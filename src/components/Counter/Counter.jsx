@@ -1,9 +1,9 @@
 import sprite from "../../assets/icons/sprite.svg";
 import * as s from "./Counter.styled";
 
-const Counter = ({ amount, onIncrease, onDecrease }) => {
+const Counter = ({ amount, onIncrease, onDecrease, $cart }) => {
   return (
-    <s.Wrapper>
+    <s.Wrapper $cart>
       <s.Btn type="button" onClick={onIncrease}>
         <svg width={20} height={20}>
           <use href={`${sprite}#plus`} />
