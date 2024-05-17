@@ -54,10 +54,11 @@ const CartList = () => {
 
   return (
     <s.List>
-      {cart?.cartProducts?.map((product) => (
+      {cart?.cartProducts?.map((product, index) => (
         <s.Wrapper
           key={product.productId._id}
           //   onClick={() => handleProductClick(product.productId._id)}
+          hasLine={index < cart.cartProducts.length - 1}
         >
           <s.Photo src={product.productId.photo} alt={product.productId.name} />
           <s.Description>

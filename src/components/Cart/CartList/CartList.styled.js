@@ -10,6 +10,23 @@ export const Wrapper = styled.li`
   display: flex;
   gap: 12px;
   width: 100%;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: ${(props) => (props.hasLine ? "block" : "none")};
+    width: 100%;
+    height: 1px;
+    background-color: ${({ theme }) => theme.color.borderInput};
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
 export const Photo = styled.img`
