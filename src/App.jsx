@@ -15,6 +15,7 @@ import { setModalContent, setModalStatus } from "./redux/pharmacy/reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { selectOpenModal } from "./redux/pharmacy/selectors";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import PrivateRoute from "./routes/PrivateRoute";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,14 @@ const App = () => {
           <Route path="/medicine-store" element={<MedicineStorePage />} />
           <Route path="/medicine" element={<MedicinePage />} />
           <Route path="/product" element={<ProductPage />} />
-          <Route path="/cart" element={<CartPage />} />
+          <Route
+            path="/cart"
+            element={
+              <PrivateRoute>
+                <CartPage />
+              </PrivateRoute>
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

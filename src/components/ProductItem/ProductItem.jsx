@@ -44,7 +44,6 @@ const ProductItem = ({ product }) => {
         })
       );
       dispatch(getCartItems());
-      console.log("ADD PRODUCT");
     }
   };
 

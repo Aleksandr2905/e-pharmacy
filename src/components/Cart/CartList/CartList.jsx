@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { selectCart } from "../../../redux/pharmacy/selectors";
 import { useEffect } from "react";
 import {
@@ -7,18 +6,14 @@ import {
   decreaseQuantity,
   deleteCart,
   getCartItems,
-  getProductById,
 } from "../../../redux/pharmacy/operations";
 import Counter from "../../Counter/Counter";
 import * as s from "./CartList.styled";
 
 const CartList = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const cart = useSelector(selectCart);
   const quantity = cart?.cartProducts?.length || "";
-
-  console.log(cart);
 
   useEffect(() => {
     dispatch(getCartItems());

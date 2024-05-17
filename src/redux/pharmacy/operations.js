@@ -83,8 +83,12 @@ export const addCart = createAsyncThunk(
 export const getCartItems = createAsyncThunk(
   "pharmacy/cartItems",
   async (_, { rejectWithValue, getState }) => {
+    const token = getState().auth.token;
+    setToken(token);
     try {
-      setToken(getState().auth.token);
+      if (!token) {
+        throw new Error("Token is missing");
+      }
       const { data } = await instance.get("/cart");
       return data;
     } catch (error) {

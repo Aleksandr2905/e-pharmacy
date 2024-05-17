@@ -89,8 +89,12 @@ export const logout = createAsyncThunk(
 export const getUserInfo = createAsyncThunk(
   "user/userInfo",
   async (_, { rejectWithValue, getState }) => {
+    const token = getState().auth.token;
+    setToken(token);
     try {
-      setToken(getState().auth.token);
+      if (!token) {
+        throw new Error("Token is missing");
+      }
       const { data } = await instance.get("/user/user-info");
       return data;
     } catch (error) {

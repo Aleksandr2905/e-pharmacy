@@ -7,11 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCart } from "../../../redux/pharmacy/selectors";
 import Button from "../../Button/Button";
 import { cartSchema } from "../../../helpers/validation";
-import {
-  cartCheckout,
-  deleteCart,
-  updateCart,
-} from "../../../redux/pharmacy/operations";
+import { cartCheckout } from "../../../redux/pharmacy/operations";
 import { toast } from "react-toastify";
 
 const CartForm = () => {
@@ -35,8 +31,6 @@ const CartForm = () => {
     resolver: yupResolver(cartSchema),
   });
   const total = Number(cart.total).toFixed(2);
-
-  console.log(cart);
 
   const onSubmit = (data) => {
     if (!cart || !cart.cartProducts || cart.cartProducts.length === 0) {
