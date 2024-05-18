@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  max-width: 335px;
+  width: 335px;
   position: relative;
   padding: 32px 40px;
   border-radius: 20px;
   background: ${({ theme }) => theme.color.white};
+
+  @media screen and (min-width: 768px) {
+    width: auto;
+    padding: 50px 70px;
+  }
 `;
 
 export const CloseBtn = styled.button`
@@ -41,6 +46,10 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 1.28;
   color: ${({ theme }) => theme.color.textModal};
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const Forma = styled.form`
@@ -50,6 +59,14 @@ export const Forma = styled.form`
 
   & > :last-child {
     margin-top: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    gap: 14px;
+
+    & > :last-child {
+      margin-top: 11px;
+    }
   }
 `;
 
