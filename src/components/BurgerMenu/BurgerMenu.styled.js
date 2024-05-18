@@ -91,6 +91,10 @@ export const NavBtn = styled(NavLink)`
     background-color: ${({ theme }) => theme.color.white};
     top: 3.18em;
     right: 47.5%;
+
+    @media screen and (min-width: 768px) {
+      right: 48.5%;
+    }
   }
 
   &::after {
@@ -103,6 +107,10 @@ export const NavBtn = styled(NavLink)`
     background-color: ${({ theme }) => theme.color.white};
     bottom: 3.18em;
     right: 47.5%;
+
+    @media screen and (min-width: 768px) {
+      right: 48.5%;
+    }
   }
 `;
 
