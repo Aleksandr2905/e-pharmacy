@@ -7,6 +7,11 @@ export const Title = styled.h2`
   font-weight: 600;
   line-height: 1.14;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    line-height: 1.2;
+  }
 `;
 
 export const Text = styled.p`
@@ -16,6 +21,12 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 1.28;
   color: ${({ theme }) => theme.color.grey};
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 88px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const List = styled.ul`
@@ -38,6 +49,11 @@ export const Item = styled.li`
   border-radius: 27px;
   border: 1px solid ${({ theme }) => theme.color.promoBorder};
   background: ${({ theme }) => theme.color.bgPromo};
+
+  @media screen and (min-width: 768px) {
+    max-width: 344px;
+    height: 232px;
+  }
 `;
 
 export const Avatar = styled.img`
@@ -47,6 +63,10 @@ export const Avatar = styled.img`
   height: 64px;
   border-radius: 64px;
   box-shadow: 0px 1px 4px 0px rgba(16, 24, 40, 0.06);
+
+  @media screen and (min-width: 768px) {
+    top: -24px;
+  }
 `;
 
 export const Name = styled.p`

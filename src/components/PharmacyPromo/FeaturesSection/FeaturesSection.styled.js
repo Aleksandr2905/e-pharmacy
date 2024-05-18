@@ -7,6 +7,11 @@ export const Wrapper = styled.ul`
   margin: 0 auto;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    max-width: 704px;
+    gap: 32px;
+  }
 `;
 
 export const Item = styled.li`
@@ -23,4 +28,10 @@ export const Text = styled.span`
   line-height: 1.28;
   letter-spacing: -0.28px;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.32px;
+  }
 `;

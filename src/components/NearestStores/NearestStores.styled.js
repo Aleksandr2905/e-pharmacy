@@ -14,6 +14,12 @@ export const Title = styled.h2`
   font-weight: 600;
   line-height: 1.14;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    width: auto;
+    font-size: 40px;
+    line-height: 1.2;
+  }
 `;
 
 export const Text = styled.p`
@@ -23,4 +29,10 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 1.28;
   color: ${({ theme }) => theme.color.grey};
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 64px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;

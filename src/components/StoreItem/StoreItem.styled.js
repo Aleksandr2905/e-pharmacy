@@ -7,12 +7,20 @@ export const Name = styled(EllipsisText)`
   font-weight: 600;
   line-height: 1.4;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const Location = styled.div`
   display: flex;
   gap: 8px;
   margin-top: ${({ $isHomePage }) => ($isHomePage ? "32px" : "20px")};
+
+  @media screen and (min-width: 768px) {
+    margin-top: ${({ $isHomePage }) => ($isHomePage ? "40px" : "20px")};
+  }
 `;
 
 export const Address = styled.div`
@@ -27,6 +35,11 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 1.28;
   color: ${({ theme }) => theme.color.grey};
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const Phone = styled.div`
@@ -47,6 +60,17 @@ export const Phone = styled.div`
     border-radius: 20px 0px 0px 20px;
     background: rgba(89, 177, 122, 0.08);
   }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 14px;
+
+    &::before {
+      width: 198px;
+      height: 42px;
+      left: ${({ $isHomePage }) => ($isHomePage ? "207px" : "191.418px")};
+      bottom: ${({ $isHomePage }) => ($isHomePage ? "-73px" : "37.418px")};
+    }
+  }
 `;
 
 export const RightBlock = styled.div`
@@ -58,6 +82,11 @@ export const RightBlock = styled.div`
   gap: 14px;
   height: 34px;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    right: 24px;
+    top: ${({ $isHomePage }) => ($isHomePage ? "40px" : "none")};
+  }
 `;
 
 export const Rating = styled.p`

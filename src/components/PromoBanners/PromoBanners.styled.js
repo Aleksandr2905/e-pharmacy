@@ -5,6 +5,14 @@ export const Wrapper = styled.ul`
   flex-direction: column;
   align-items: center;
   gap: 16px;
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 670px;
+    margin: 0 auto;
+    gap: 28px;
+  }
 `;
 
 export const Item = styled.li`
@@ -19,6 +27,10 @@ export const Item = styled.li`
   border: 1px solid ${({ theme }) => theme.color.promoBorder};
   background: ${({ theme }) => theme.color.bgPromo};
   box-shadow: 0px -1px 13.858px 0px rgba(29, 30, 33, 0.02);
+
+  @media screen and (min-width: 768px) {
+    min-width: 321px;
+  }
 `;
 
 export const Top = styled.div`
@@ -39,6 +51,12 @@ export const Banner = styled.p`
   line-height: 1;
   background-color: ${({ theme }) => theme.color.bgPromoBanner};
   color: ${({ theme }) => theme.color.green};
+
+  @media screen and (min-width: 768px) {
+    width: 74px;
+    height: 74px;
+    font-size: 28px;
+  }
 `;
 
 export const Title = styled.p`
@@ -46,12 +64,20 @@ export const Title = styled.p`
   font-weight: 500;
   line-height: 1.4;
   color: ${({ theme }) => theme.color.promoTitle};
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const Bottom = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 16px;
+
+  @media screen and (min-width: 768px) {
+    gap: 28px;
+  }
 `;
 
 export const Discount = styled.p`
@@ -60,6 +86,11 @@ export const Discount = styled.p`
   font-weight: 500;
   line-height: 1.4;
   color: ${({ theme }) => theme.color.promoTitle};
+
+  @media screen and (min-width: 768px) {
+    width: 94px;
+    font-size: 36px;
+  }
 `;
 
 export const Button = styled.button`

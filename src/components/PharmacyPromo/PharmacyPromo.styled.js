@@ -10,6 +10,12 @@ export const Wrapper = styled.div`
   padding: 20px;
   gap: 19px;
   background-color: ${({ theme }) => theme.color.green};
+
+  @media screen and (min-width: 768px) {
+    max-width: 704px;
+    margin: 0 auto 64px auto;
+    padding: 40px 48px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -20,6 +26,13 @@ export const Title = styled.h2`
   line-height: 1.14;
   letter-spacing: -0.28px;
   color: ${({ theme }) => theme.color.promoBorder};
+
+  @media screen and (min-width: 768px) {
+    max-width: 608px;
+    margin: 64px 0 24px;
+    font-size: 48px;
+    letter-spacing: -0.48px;
+  }
 `;
 
 export const Text = styled.p`
@@ -29,6 +42,12 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 1.28;
   color: ${({ theme }) => theme.color.promoBorder};
+
+  @media screen and (min-width: 768px) {
+    max-width: 488px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
 
 export const Button = styled(Link)`
@@ -49,5 +68,10 @@ export const Button = styled(Link)`
 
   &:hover {
     background-color: ${({ theme }) => theme.color.darkGreen};
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 64px;
+    padding: 13px 50px;
   }
 `;

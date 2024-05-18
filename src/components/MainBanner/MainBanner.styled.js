@@ -1,14 +1,20 @@
 import styled from "styled-components";
+import { Container } from "../../styles/GlobalStyles";
 import heroMob from "../../assets/images/mobile/heroMob@1x.png";
 import heroMob2x from "../../assets/images/mobile/heroMob@2x.png";
-import { Container } from "../../styles/GlobalStyles";
+import heroTablet from "../../assets/images/tablet/heroTablet@1x.png";
+import heroTablet2x from "../../assets/images/tablet/heroTablet@2x.png";
 
 export const Section = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 730px;
+  /* height: calc(100vh - 82px); */
   background-color: ${({ theme }) => theme.color.green};
+
+  @media screen and (min-width: 768px) {
+    /* height: calc(100vh - 92px); */
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -23,6 +29,19 @@ export const Wrapper = styled.div`
     (min-resolution: 2dppx) {
     background-image: url(${heroMob2x});
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 704px;
+    height: 508px;
+    background-image: url(${heroTablet});
+    background-size: 704px 508px;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(${heroTablet2x});
+    }
+  }
 `;
 
 export const Title = styled.h1`
@@ -32,6 +51,12 @@ export const Title = styled.h1`
   font-weight: 600;
   line-height: 1;
   color: ${({ theme }) => theme.color.white};
+
+  @media screen and (min-width: 768px) {
+    padding-left: 31px;
+    padding-top: 140px;
+    font-size: 74px;
+  }
 `;
 
 export const Text = styled.p`
@@ -42,4 +67,12 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 1.33;
   color: ${({ theme }) => theme.color.white};
+
+  @media screen and (min-width: 768px) {
+    width: 207px;
+    margin-top: 24px;
+    margin-right: 83px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 `;
