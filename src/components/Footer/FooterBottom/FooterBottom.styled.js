@@ -11,6 +11,16 @@ export const Wrapper = styled.ul`
     padding-right: 10px;
     border-right: 1px solid ${({ theme }) => theme.color.lightGrey30};
   }
+
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    padding-top: 33px;
+    gap: 24px;
+
+    & > :not(:last-child) {
+      padding-right: 24px;
+    }
+  }
 `;
 
 export const Item = styled.li`
@@ -18,4 +28,9 @@ export const Item = styled.li`
   font-weight: 400;
   line-height: 1;
   color: ${({ theme }) => theme.color.lightGrey};
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.28;
+  }
 `;

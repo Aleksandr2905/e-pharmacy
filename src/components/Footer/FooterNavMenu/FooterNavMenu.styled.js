@@ -5,6 +5,10 @@ export const Wrapper = styled.nav`
   display: flex;
   gap: 32px;
   margin-bottom: 80px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const Button = styled(Link)`
