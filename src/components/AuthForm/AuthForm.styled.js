@@ -22,6 +22,17 @@ export const Container = styled.section`
     background-size: contain;
     z-index: -1;
   }
+
+  @media screen and (min-width: 768px) {
+    padding: 28px 32px;
+
+    &::before {
+      bottom: -74px;
+      right: -187px;
+      width: 464px;
+      height: 345px;
+    }
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -31,10 +42,14 @@ export const Wrapper = styled.div`
   max-width: 335px;
   margin: 0 auto;
   height: 100%;
+
+  @media screen and (min-width: 768px) {
+    max-width: 614px;
+    margin: 0;
+  }
 `;
 
 export const Title = styled.h2`
-  max-width: 335px;
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 600;
@@ -58,6 +73,19 @@ export const Title = styled.h2`
   & span {
     color: ${({ theme }) => theme.color.green};
   }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 54px;
+    font-size: 54px;
+    line-height: 1.11;
+
+    &::before {
+      top: -104px;
+      right: 19px;
+      width: 179px;
+      height: 175px;
+    }
+  }
 `;
 
 export const Forma = styled.form`
@@ -69,6 +97,10 @@ export const Forma = styled.form`
 
   & > :nth-last-child(2) {
     margin-top: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
   }
 `;
 

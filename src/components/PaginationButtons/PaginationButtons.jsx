@@ -9,8 +9,6 @@ const PaginationButtons = () => {
   const totalPages = useSelector(selectTotalPages);
   const dispatch = useDispatch();
 
-  console.log(totalPages);
-
   const handleChange = (e, p) => {
     dispatch(setCurrentPage(p));
   };
