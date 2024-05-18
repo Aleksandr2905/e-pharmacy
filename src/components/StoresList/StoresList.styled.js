@@ -52,20 +52,20 @@ export const Item = styled.li`
 
   @media screen and (min-width: 768px) {
     min-width: 344px;
-    padding: ${({ $isHomePage }) => ($isHomePage ? "40px" : "32px 32px")};
+    padding: 40px;
 
     &::before {
       width: 198px;
       height: 42px;
-      right: ${({ $isHomePage }) => ($isHomePage ? "-152px" : "-109.582px")};
-      bottom: ${({ $isHomePage }) => ($isHomePage ? "56px" : "216px")};
+      right: ${({ $isHomePage }) => ($isHomePage ? "-152px" : "-137px")};
+      bottom: ${({ $isHomePage }) => ($isHomePage ? "56px" : "232px")};
     }
 
     &::after {
       width: 198px;
       height: 42px;
-      right: ${({ $isHomePage }) => ($isHomePage ? "-84px" : "-38.582px")};
-      bottom: ${({ $isHomePage }) => ($isHomePage ? "29px" : "196px")};
+      right: ${({ $isHomePage }) => ($isHomePage ? "-84px" : "-63px")};
+      bottom: ${({ $isHomePage }) => ($isHomePage ? "29px" : "210px")};
     }
   }
 `;

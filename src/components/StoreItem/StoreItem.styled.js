@@ -67,8 +67,8 @@ export const Phone = styled.div`
     &::before {
       width: 198px;
       height: 42px;
-      left: ${({ $isHomePage }) => ($isHomePage ? "207px" : "191.418px")};
-      bottom: ${({ $isHomePage }) => ($isHomePage ? "-73px" : "37.418px")};
+      left: ${({ $isHomePage }) => ($isHomePage ? "207px" : "191px")};
+      bottom: ${({ $isHomePage }) => ($isHomePage ? "-73px" : "38px")};
     }
   }
 `;
@@ -86,6 +86,7 @@ export const RightBlock = styled.div`
   @media screen and (min-width: 768px) {
     right: 24px;
     top: ${({ $isHomePage }) => ($isHomePage ? "40px" : "none")};
+    bottom: ${({ $isHomePage }) => ($isHomePage ? "none" : "40px")};
   }
 `;
 
