@@ -84,7 +84,7 @@ export const ErrorText = styled.p`
 export const Icon = styled.svg`
   position: absolute;
   right: 18px;
-  top: 15px;
+  top: 23px;
   width: 16px;
   height: 16px;
   cursor: pointer;
