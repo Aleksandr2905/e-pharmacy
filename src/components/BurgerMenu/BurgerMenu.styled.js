@@ -7,11 +7,15 @@ export const Wrapper = styled.div`
   justify-content: center;
   width: 210px;
   height: 100vh;
-  padding-top: 50%;
+  padding-top: calc((100vh / 2) - 142px);
   position: fixed;
   top: 0;
   right: 0;
   background-color: ${({ theme }) => theme.color.green};
+
+  @media screen and (min-width: 768px) {
+    width: 334px;
+  }
 `;
 
 export const CloseBtn = styled.button`
@@ -29,6 +33,11 @@ export const CloseBtn = styled.button`
     &:hover {
       transform: rotate(90deg);
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 39px;
+    right: 32px;
   }
 `;
 

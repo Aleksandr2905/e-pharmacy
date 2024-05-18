@@ -6,6 +6,10 @@ export const Wrapper = styled.header`
   padding: 25px 20px;
   background-color: ${({ $isHomePage, theme }) =>
     $isHomePage ? theme.color.green : "transparent"};
+
+  @media screen and (min-width: 768px) {
+    padding: 28px 32px 20px;
+  }
 `;
 
 export const UserStatus = styled.div`

@@ -128,8 +128,9 @@ export const Container = styled.section`
   padding-right: 20px; */
 
   @media screen and (min-width: 768px) {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 60px 32px;
+    /* padding-left: 32px;
+    padding-right: 32px; */
   }
 
   @media screen and (min-width: 1440px) {
