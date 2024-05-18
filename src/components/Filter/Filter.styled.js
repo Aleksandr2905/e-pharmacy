@@ -6,6 +6,13 @@ export const Forma = styled.form`
   gap: 12px;
   width: 335px;
   margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    width: 704px;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 32px;
+  }
 `;
 
 export const BtnBlock = styled.div`

@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 226px;
+  }
 `;
 
 export const Photo = styled.img`
@@ -11,6 +15,10 @@ export const Photo = styled.img`
   height: 300px;
   border-radius: 20px;
   border: 1px solid ${({ theme }) => theme.color.borderProductCard};
+
+  @media screen and (min-width: 768px) {
+    height: 260px;
+  }
 `;
 
 export const Description = styled.div`
@@ -21,6 +29,11 @@ export const Description = styled.div`
   padding: 20px;
   border-radius: 20px;
   background: ${({ theme }) => theme.color.white};
+
+  @media screen and (min-width: 768px) {
+    min-width: 226px;
+    gap: 14px;
+  }
 `;
 
 export const Top = styled.div`
@@ -40,6 +53,10 @@ export const Name = styled.h3`
   font-weight: 600;
   line-height: 1.4;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Supplier = styled.p`
@@ -55,6 +72,10 @@ export const Price = styled.p`
   font-weight: 600;
   line-height: 1.4;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Bottom = styled.div`

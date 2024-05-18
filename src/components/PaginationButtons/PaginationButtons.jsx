@@ -20,7 +20,7 @@ const PaginationButtons = () => {
         showLastButton
         defaultPage={1}
         siblingCount={0}
-        boundaryCount={0}
+        boundaryCount={1}
         onChange={handleChange}
         variant="outlined"
         sx={{
