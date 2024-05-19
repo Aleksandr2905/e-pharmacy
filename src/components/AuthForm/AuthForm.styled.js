@@ -33,6 +33,17 @@ export const Container = styled.section`
       height: 345px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    padding: 28px 100px;
+
+    &::before {
+      bottom: -88px;
+      right: -175px;
+      width: 464px;
+      height: 345px;
+    }
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -46,6 +57,14 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 768px) {
     max-width: 614px;
     margin: 0;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1242px;
+    flex-direction: row;
+    gap: 54px;
+    align-items: center;
+    justify-content: space-between;
   }
 `;
 
@@ -86,6 +105,10 @@ export const Title = styled.h2`
       height: 175px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    width: 614px;
+  }
 `;
 
 export const Forma = styled.form`
@@ -103,6 +126,11 @@ export const Forma = styled.form`
     flex-direction: ${({ $loginPage }) => ($loginPage ? "column" : "row")};
     flex-wrap: ${({ $loginPage }) => ($loginPage ? "nowrap" : "wrap")};
     height: auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 574px;
+    height: fit-content;
   }
 `;
 
