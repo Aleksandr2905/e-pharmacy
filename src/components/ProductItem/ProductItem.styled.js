@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import EllipsisText from "react-ellipsis-text";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -48,7 +49,7 @@ export const Title = styled.div`
   gap: 4px;
 `;
 
-export const Name = styled.h3`
+export const Name = styled(EllipsisText)`
   font-size: 16px;
   font-weight: 600;
   line-height: 1.4;

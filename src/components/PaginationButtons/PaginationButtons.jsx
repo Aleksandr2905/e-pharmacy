@@ -13,7 +13,12 @@ const PaginationButtons = () => {
 
   const handleChange = (e, p) => {
     dispatch(setCurrentPage(p));
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
+
   return (
     <Stack spacing={2}>
       <Pagination

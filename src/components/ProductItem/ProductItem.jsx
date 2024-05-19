@@ -74,7 +74,8 @@ const ProductItem = ({ product }) => {
       <s.Description>
         <s.Top>
           <s.Title>
-            <s.Name>{product.name}</s.Name>
+            <s.Name text={product.name} length={12} />
+            {/* <s.Name>{product.name}</s.Name> */}
             <s.Supplier>{product.suppliers}</s.Supplier>
           </s.Title>
           <s.Price>৳{product.price}</s.Price>
