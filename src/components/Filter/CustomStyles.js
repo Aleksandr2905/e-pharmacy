@@ -1,7 +1,5 @@
-import { color } from "framer-motion";
-
 export const customStyles = {
-  control: (baseStyles, state) => ({
+  control: (baseStyles) => ({
     ...baseStyles,
     borderRadius: "60px",
     border: "1px solid rgba(29, 30, 33, 0.10)",

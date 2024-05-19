@@ -1,4 +1,3 @@
-import { useScreenWidth } from "../../hooks/useScreenWidth";
 import * as s from "./Footer.styled";
 import FooterBottom from "./FooterBottom/FooterBottom";
 import FooterLogo from "./FooterLogo/FooterLogo";
@@ -6,8 +5,6 @@ import FooterNavMenu from "./FooterNavMenu/FooterNavMenu";
 import Social from "./Social/Social";
 
 const Footer = () => {
-  const screen = useScreenWidth();
-
   return (
     <>
       <s.Wrapper>

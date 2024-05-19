@@ -6,12 +6,20 @@ export const Wrapper = styled.div`
   padding: 20px;
   border-radius: 27px;
   background-color: ${({ theme }) => theme.color.white};
+
+  @media screen and (min-width: 768px) {
+    padding: 32px;
+  }
 `;
 
 export const BtnWrapper = styled.div`
   display: flex;
   gap: 8px;
   margin-bottom: 28px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
 `;
 
 export const Button = styled.button`
@@ -49,6 +57,10 @@ export const Main = styled.p`
   font-weight: 400;
   line-height: 1.28;
   color: ${({ theme }) => theme.color.textModal};
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const Prescription = styled.p`
@@ -59,6 +71,10 @@ export const Prescription = styled.p`
 
   & span {
     color: ${({ theme }) => theme.color.textModal};
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
   }
 `;
 
@@ -100,6 +116,10 @@ export const Reviewer = styled.h3`
   font-weight: 600;
   line-height: 1.4;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Date = styled.p`
@@ -113,21 +133,30 @@ export const Date = styled.p`
 export const Rating = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
   position: absolute;
   top: 14px;
   right: 28px;
-
-  & svg {
-    fill: ${({ theme }) => theme.color.yellow};
-  }
 
   & p {
     font-size: 14px;
     font-weight: 500;
     line-height: 1.28;
     color: ${({ theme }) => theme.color.black};
+    margin-left: 6px;
   }
+`;
+
+export const Star = styled.svg`
+  width: 16px;
+  height: 16px;
+  fill: ${({ theme }) => theme.color.yellow};
+`;
+
+export const StarTablet = styled.svg`
+  width: 16px;
+  height: 16px;
+  fill: ${({ $active, theme }) => ($active ? theme.color.yellow : "#E0E0E0")};
+  margin-right: 2px;
 `;
 
 export const Comment = styled.p`
@@ -135,4 +164,8 @@ export const Comment = styled.p`
   font-weight: 400;
   line-height: 1.28;
   color: ${({ theme }) => theme.color.textModal};
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;

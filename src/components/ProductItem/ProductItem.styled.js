@@ -7,7 +7,10 @@ export const Wrapper = styled.div`
   gap: 8px;
 
   @media screen and (min-width: 768px) {
-    max-width: 226px;
+    max-width: ${({ $isProductPage }) => ($isProductPage ? "100%" : "226px")};
+    flex-direction: ${({ $isProductPage }) =>
+      $isProductPage ? "row" : "column"};
+    gap: ${({ $isProductPage }) => ($isProductPage ? "16px" : "8px")};
   }
 `;
 
@@ -18,7 +21,8 @@ export const Photo = styled.img`
   border: 1px solid ${({ theme }) => theme.color.borderProductCard};
 
   @media screen and (min-width: 768px) {
-    height: 260px;
+    width: ${({ $isProductPage }) => ($isProductPage ? "364px" : "100%")};
+    height: ${({ $isProductPage }) => ($isProductPage ? "284px" : "260px")};
   }
 `;
 
@@ -32,8 +36,11 @@ export const Description = styled.div`
   background: ${({ theme }) => theme.color.white};
 
   @media screen and (min-width: 768px) {
-    min-width: 226px;
+    min-width: ${({ $isProductPage }) => ($isProductPage ? "324px" : "226px")};
     gap: 14px;
+    padding: ${({ $isProductPage }) => ($isProductPage ? "32px" : "20px")};
+    justify-content: ${({ $isProductPage }) =>
+      $isProductPage ? "space-between" : "none"};
   }
 `;
 
@@ -41,6 +48,12 @@ export const Top = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: ${({ $isProductPage }) =>
+      $isProductPage ? "column" : "none"};
+    gap: ${({ $isProductPage }) => ($isProductPage ? "32px" : "none")};
+  }
 `;
 
 export const Title = styled.div`
@@ -56,7 +69,7 @@ export const Name = styled(EllipsisText)`
   color: ${({ theme }) => theme.color.black};
 
   @media screen and (min-width: 768px) {
-    font-size: 18px;
+    font-size: ${({ $isProductPage }) => ($isProductPage ? "20px" : "18px")};
   }
 `;
 
@@ -75,7 +88,7 @@ export const Price = styled.p`
   color: ${({ theme }) => theme.color.black};
 
   @media screen and (min-width: 768px) {
-    font-size: 18px;
+    font-size: ${({ $isProductPage }) => ($isProductPage ? "20px" : "18px")};
   }
 `;
 

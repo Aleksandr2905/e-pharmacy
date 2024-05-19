@@ -65,20 +65,24 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <s.Wrapper>
+    <s.Wrapper $isProductPage={productPage}>
       <s.Photo
         src={product.photo}
         alt={`photo ${product.name} `}
+        $isProductPage={productPage}
         loading="lazy"
       />
-      <s.Description>
-        <s.Top>
+      <s.Description $isProductPage={productPage}>
+        <s.Top $isProductPage={productPage}>
           <s.Title>
-            <s.Name text={product.name} length={12} />
-            {/* <s.Name>{product.name}</s.Name> */}
+            <s.Name
+              text={product.name}
+              length={12}
+              $isProductPage={productPage}
+            />
             <s.Supplier>{product.suppliers}</s.Supplier>
           </s.Title>
-          <s.Price>৳{product.price}</s.Price>
+          <s.Price $isProductPage={productPage}>৳{product.price}</s.Price>
         </s.Top>
         <s.Bottom $isProductPage={productPage}>
           <Button
