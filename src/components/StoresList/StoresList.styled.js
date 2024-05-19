@@ -12,6 +12,11 @@ export const Wrapper = styled.ul`
     max-width: 704px;
     gap: 32px 16px;
   }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1248px;
+    gap: 38px 36px;
+  }
 `;
 
 export const Item = styled.li`
@@ -65,6 +70,21 @@ export const Item = styled.li`
       width: 198px;
       height: 42px;
       right: ${({ $isHomePage }) => ($isHomePage ? "-84px" : "-63px")};
+      bottom: ${({ $isHomePage }) => ($isHomePage ? "29px" : "210px")};
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    min-width: 392px;
+    height: 232px;
+
+    &::before {
+      right: ${({ $isHomePage }) => ($isHomePage ? "-126px" : "-137px")};
+      bottom: ${({ $isHomePage }) => ($isHomePage ? "56px" : "232px")};
+    }
+
+    &::after {
+      right: ${({ $isHomePage }) => ($isHomePage ? "-58px" : "-63px")};
       bottom: ${({ $isHomePage }) => ($isHomePage ? "29px" : "210px")};
     }
   }

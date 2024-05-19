@@ -25,7 +25,7 @@ const PharmacyPromo = () => {
           </s.Text>
           <s.Button to="/medicine-store">Buy medicine</s.Button>
         </div>
-        <img
+        <s.Img
           srcSet={`${imageAdaptive.oneX} 1x, ${imageAdaptive.twoX} 2x`}
           src={`${imageAdaptive.oneX}`}
           alt="Girl with phone and pills"

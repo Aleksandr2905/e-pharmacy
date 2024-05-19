@@ -16,6 +16,12 @@ export const Wrapper = styled.div`
     margin: 0 auto 64px auto;
     padding: 40px 48px;
   }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1248px;
+    flex-direction: row;
+    padding: 40px 40px 40px 80px;
+  }
 `;
 
 export const Title = styled.h2`
@@ -73,5 +79,12 @@ export const Button = styled(Link)`
   @media screen and (min-width: 768px) {
     margin-bottom: 64px;
     padding: 13px 50px;
+  }
+`;
+
+export const Img = styled.img`
+  @media screen and (min-width: 1440px) {
+    width: 633px;
+    height: 406px;
   }
 `;

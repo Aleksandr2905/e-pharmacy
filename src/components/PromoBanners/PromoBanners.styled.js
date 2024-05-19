@@ -13,6 +13,12 @@ export const Wrapper = styled.ul`
     margin: 0 auto;
     gap: 28px;
   }
+
+  @media screen and (min-width: 1440px) {
+    width: auto;
+    justify-content: center;
+    margin-top: 4px;
+  }
 `;
 
 export const Item = styled.li`

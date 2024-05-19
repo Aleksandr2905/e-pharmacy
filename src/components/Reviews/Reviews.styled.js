@@ -54,6 +54,12 @@ export const Item = styled.li`
     max-width: 344px;
     height: 232px;
   }
+
+  @media screen and (min-width: 768px) {
+    max-width: 382px;
+    height: 232px;
+    padding: 0px 28px 40px 28px;
+  }
 `;
 
 export const Avatar = styled.img`

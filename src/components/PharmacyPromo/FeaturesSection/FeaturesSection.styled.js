@@ -12,6 +12,11 @@ export const Wrapper = styled.ul`
     max-width: 704px;
     gap: 32px;
   }
+
+  @media screen and (min-width: 1440px) {
+    max-width: none;
+    gap: 48px;
+  }
 `;
 
 export const Item = styled.li`
