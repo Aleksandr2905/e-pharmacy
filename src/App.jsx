@@ -16,17 +16,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectOpenModal } from "./redux/pharmacy/selectors";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import PrivateRoute from "./routes/PrivateRoute";
+import { selectIsLoading } from "./redux/auth/selectors";
+import Loader from "./components/Loader/Loader";
 
 const App = () => {
   const dispatch = useDispatch();
   const modalStatus = useSelector(selectOpenModal);
+  const isLoading = useSelector(selectIsLoading);
 
   const handleCloseModal = () => {
     dispatch(setModalStatus(false));
     dispatch(setModalContent(null));
   };
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
