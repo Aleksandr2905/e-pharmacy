@@ -16,6 +16,10 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 768px) {
     width: 334px;
   }
+
+  @media screen and (min-width: 1440px) {
+    display: none;
+  }
 `;
 
 export const CloseBtn = styled.button`
@@ -38,79 +42,6 @@ export const CloseBtn = styled.button`
   @media screen and (min-width: 768px) {
     top: 39px;
     right: 32px;
-  }
-`;
-
-export const Navigation = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: 2px;
-
-  & > :nth-child(2) {
-    width: 134px;
-  }
-`;
-
-export const NavBtn = styled(NavLink)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 96px;
-  height: 46px;
-  border-radius: 60px;
-  font-size: 14px;
-  text-align: center;
-  font-weight: 400;
-  line-height: 100%;
-  padding: 8px;
-  background-color: ${({ theme }) => theme.color.white};
-  border: 1.5px solid ${({ theme }) => theme.color.promoBorder};
-  color: ${({ theme }) => theme.color.grey};
-
-  &:hover {
-    color: ${({ theme }) => theme.color.white};
-    background-color: ${({ theme }) => theme.color.green};
-  }
-
-  &.active {
-    border: 8px solid ${({ theme }) => theme.color.white};
-    color: ${({ theme }) => theme.color.white};
-    background-color: ${({ theme }) => theme.color.green};
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 8px;
-    height: 0.35em;
-    border-left: 1.5px solid ${({ theme }) => theme.color.promoBorder};
-    border-right: 1.5px solid ${({ theme }) => theme.color.promoBorder};
-    background-color: ${({ theme }) => theme.color.white};
-    top: 3.18em;
-    right: 47.5%;
-
-    @media screen and (min-width: 768px) {
-      right: 48.5%;
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 8px;
-    height: 0.35em;
-    border-left: 1.5px solid ${({ theme }) => theme.color.promoBorder};
-    border-right: 1.5px solid ${({ theme }) => theme.color.promoBorder};
-    background-color: ${({ theme }) => theme.color.white};
-    bottom: 3.18em;
-    right: 47.5%;
-
-    @media screen and (min-width: 768px) {
-      right: 48.5%;
-    }
   }
 `;
 

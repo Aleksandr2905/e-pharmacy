@@ -62,7 +62,7 @@ const AuthForm = ({ formType = "Register" }) => {
         </s.Title>
         <s.Forma onSubmit={handleSubmit(onSubmit)} $loginPage={loginPage}>
           {(formType === "Register" ? signup : signin).map((input, index) => (
-            <s.InputTablet $loginPage={loginPage}>
+            <s.InputTablet $loginPage={loginPage} key={index}>
               <InputForm
                 key={index}
                 name={input.name}

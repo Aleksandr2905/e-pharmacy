@@ -124,17 +124,12 @@ a {
 
 export const Container = styled.section`
   padding: 40px 20px;
-  /* padding-left: 20px;
-  padding-right: 20px; */
 
   @media screen and (min-width: 768px) {
     padding: 60px 32px;
-    /* padding-left: 32px;
-    padding-right: 32px; */
   }
 
   @media screen and (min-width: 1440px) {
-    padding-left: 96px;
-    padding-right: 96px;
+    padding: 60px 96px;
   }
 `;

@@ -10,6 +10,10 @@ export const Wrapper = styled.header`
   @media screen and (min-width: 768px) {
     padding: 28px 32px 20px;
   }
+
+  @media screen and (min-width: 1440px) {
+    padding: 28px 128px 38px;
+  }
 `;
 
 export const UserStatus = styled.div`
