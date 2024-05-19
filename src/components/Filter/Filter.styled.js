@@ -13,10 +13,27 @@ export const Forma = styled.form`
     align-items: flex-end;
     margin-bottom: 32px;
   }
+
+  @media screen and (min-width: 1440px) {
+    gap: 14px;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+`;
+
+export const SelectDesktop = styled.div`
+  @media screen and (min-width: 1440px) {
+    width: 214px;
+  }
+`;
+
+export const InputDesktop = styled.div`
+  @media screen and (min-width: 1440px) {
+    width: 224px;
+  }
 `;
 
 export const BtnBlock = styled.div`
-  /* display: flex; */
   display: grid;
   gap: 12px;
   grid-template-columns: 1fr 1fr;

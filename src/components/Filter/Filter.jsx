@@ -11,7 +11,7 @@ import { customStyles } from "./CustomStyles";
 import Button from "../Button/Button";
 import * as s from "./Filter.styled";
 
-const Filter = ({ totalPages}) => {
+const Filter = ({ totalPages }) => {
   const dispatch = useDispatch();
   const currentPage = useSelector(selectCurrentPage);
   const [selectCategory, setSelectCategory] = useState("");
@@ -79,21 +79,25 @@ const Filter = ({ totalPages}) => {
 
   return (
     <s.Forma onSubmit={handleSubmit(onSubmit)}>
-      <Select
-        styles={customStyles}
-        options={options}
-        placeholder="Product category"
-        onChange={handleCategoryChange}
-        value={selectCategory}
-        isSearchable={false}
-      />
-      <InputForm
-        name="search"
-        type="text"
-        placeholder="Search medicine"
-        register={register}
-        errors={errors}
-      />
+      <s.SelectDesktop>
+        <Select
+          styles={customStyles}
+          options={options}
+          placeholder="Product category"
+          onChange={handleCategoryChange}
+          value={selectCategory}
+          isSearchable={false}
+        />
+      </s.SelectDesktop>
+      <s.InputDesktop>
+        <InputForm
+          name="search"
+          type="text"
+          placeholder="Search medicine"
+          register={register}
+          errors={errors}
+        />
+      </s.InputDesktop>
       <s.BtnBlock>
         <Button type="submit" name="filter" text="Filter" />
         <Button

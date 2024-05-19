@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
       $isProductPage ? "row" : "column"};
     gap: ${({ $isProductPage }) => ($isProductPage ? "16px" : "8px")};
   }
+
+  @media screen and (min-width: 1440px) {
+    max-width: ${({ $isProductPage }) => ($isProductPage ? "100%" : "280px")};
+  }
 `;
 
 export const Photo = styled.img`
@@ -23,6 +27,11 @@ export const Photo = styled.img`
   @media screen and (min-width: 768px) {
     width: ${({ $isProductPage }) => ($isProductPage ? "364px" : "100%")};
     height: ${({ $isProductPage }) => ($isProductPage ? "284px" : "260px")};
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: ${({ $isProductPage }) => ($isProductPage ? "364px" : "280px")};
+    height: ${({ $isProductPage }) => ($isProductPage ? "284px" : "280px")};
   }
 `;
 
@@ -40,7 +49,7 @@ export const Description = styled.div`
     gap: 14px;
     padding: ${({ $isProductPage }) => ($isProductPage ? "32px" : "20px")};
     justify-content: ${({ $isProductPage }) =>
-      $isProductPage ? "space-between" : "none"};
+      $isProductPage ? "space-between" : ""};
   }
 `;
 
