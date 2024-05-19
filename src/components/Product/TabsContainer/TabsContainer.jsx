@@ -52,7 +52,11 @@ const TabsContainer = () => {
           {reviews.map((review) => (
             <s.Review key={review.photo}>
               <s.Profile>
-                <s.Photo src={review.photo} alt={`photo ${review.reviewer}`} />
+                <s.Photo
+                  src={review.photo}
+                  alt={`photo ${review.reviewer}`}
+                  loading="lazy"
+                />
                 <s.Name>
                   <s.Reviewer>{review.reviewer}</s.Reviewer>
                   <s.Date>{review.date}</s.Date>

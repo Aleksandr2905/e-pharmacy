@@ -9,9 +9,9 @@ const Logo = () => {
   return (
     <s.Wrapper href="/">
       {pathname === "/" ? (
-        <s.Img src={logo} alt="logo" />
+        <s.Img src={logo} alt="logo" loading="lazy" />
       ) : (
-        <s.Img src={logoGreen} alt="logo" />
+        <s.Img src={logoGreen} alt="logo" loading="lazy" />
       )}
       <s.Text $isHomePage={pathname === "/"}>E-Pharmacy</s.Text>
     </s.Wrapper>

@@ -24,7 +24,11 @@ const Reviews = () => {
       <s.List>
         {reviews.slice(0, displayCount).map((review) => (
           <s.Item key={review._id}>
-            <s.Avatar src={review.avatar} alt={`avatar ${review.name}`} />
+            <s.Avatar
+              src={review.avatar}
+              alt={`avatar ${review.name}`}
+              loading="lazy"
+            />
             <s.Name>{review.name}</s.Name>
             <s.Review>{review.testimonial}</s.Review>
           </s.Item>

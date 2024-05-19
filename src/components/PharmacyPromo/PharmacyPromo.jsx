@@ -29,6 +29,7 @@ const PharmacyPromo = () => {
           srcSet={`${imageAdaptive.oneX} 1x, ${imageAdaptive.twoX} 2x`}
           src={`${imageAdaptive.oneX}`}
           alt="Girl with phone and pills"
+          loading="lazy"
         />
       </s.Wrapper>
       <FeaturesSection />

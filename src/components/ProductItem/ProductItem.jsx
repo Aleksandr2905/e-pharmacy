@@ -66,7 +66,11 @@ const ProductItem = ({ product }) => {
 
   return (
     <s.Wrapper>
-      <s.Photo src={product.photo} alt={`photo ${product.name} `} />
+      <s.Photo
+        src={product.photo}
+        alt={`photo ${product.name} `}
+        loading="lazy"
+      />
       <s.Description>
         <s.Top>
           <s.Title>

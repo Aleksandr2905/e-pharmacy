@@ -48,7 +48,7 @@ const CartList = () => {
           key={product.productId._id}
           $hasLine={index < cart.cartProducts.length - 1}
         >
-          <s.Photo src={product.productId.photo} alt={product.productId.name} />
+          <s.Photo src={product.productId.photo} alt={product.productId.name} loading="lazy"/>
           <s.Description>
             <s.NameBlock>
               <s.Name>{product.productId.name}</s.Name>
