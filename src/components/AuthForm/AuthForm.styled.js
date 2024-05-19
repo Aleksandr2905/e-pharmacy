@@ -100,7 +100,25 @@ export const Forma = styled.form`
   }
 
   @media screen and (min-width: 768px) {
-    width: 50%;
+    flex-direction: ${({ $loginPage }) => ($loginPage ? "column" : "row")};
+    flex-wrap: ${({ $loginPage }) => ($loginPage ? "nowrap" : "wrap")};
+    height: auto;
+  }
+`;
+
+export const InputTablet = styled.div`
+  @media screen and (min-width: 768px) {
+    width: ${({ $loginPage }) => ($loginPage ? "323px" : "280px")};
+  }
+`;
+
+export const BtnWrapper = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: ${({ $loginPage }) => ($loginPage ? "323px" : "280px")};
+    margin-top: 62px;
   }
 `;
 
