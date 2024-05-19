@@ -4,6 +4,10 @@ export const Wrapper = styled.form`
   padding: 20px 20px 40px;
   border-radius: 27px;
   background: ${({ theme }) => theme.color.white};
+
+  @media screen and (min-width: 768px) {
+    padding: 40px 78px;
+  }
 `;
 
 export const SubTitle = styled.h3`
@@ -12,6 +16,11 @@ export const SubTitle = styled.h3`
   font-weight: 600;
   line-height: 1.4;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 14px;
+    font-size: 20px;
+  }
 `;
 
 export const Text = styled.p`
@@ -20,6 +29,10 @@ export const Text = styled.p`
   font-weight: 400;
   line-height: 1.28;
   color: ${({ theme }) => theme.color.textModal};
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -29,6 +42,19 @@ export const InputWrapper = styled.div`
   padding-bottom: 40px;
   margin: 20px 0 40px;
   border-bottom: 1px solid ${({ theme }) => theme.color.borderInput};
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px 14px;
+    margin: 40px 0 40px;
+  }
+`;
+
+export const InputTablet = styled.div`
+  @media screen and (min-width: 768px) {
+    width: 260px;
+  }
 `;
 
 export const RadioWrapper = styled.div`
@@ -37,6 +63,10 @@ export const RadioWrapper = styled.div`
   padding-bottom: 40px;
   margin: 20px 0 40px;
   border-bottom: 1px solid ${({ theme }) => theme.color.borderInput};
+
+  @media screen and (min-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 export const RadioLabel = styled.label`
@@ -97,7 +127,11 @@ export const TotalWrapper = styled.div`
   margin-bottom: 20px;
   padding: 14px 18px;
   border-radius: 8px;
-  background: #e7f1ed;
+  background-color: #e7f1ed;
+
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 export const Total = styled.p`
@@ -105,4 +139,8 @@ export const Total = styled.p`
   font-weight: 600;
   line-height: 1.4;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;

@@ -48,13 +48,19 @@ const CartList = () => {
           key={product.productId._id}
           $hasLine={index < cart.cartProducts.length - 1}
         >
-          <s.Photo src={product.productId.photo} alt={product.productId.name} loading="lazy"/>
+          <s.Photo
+            src={product.productId.photo}
+            alt={product.productId.name}
+            loading="lazy"
+          />
           <s.Description>
-            <s.NameBlock>
-              <s.Name>{product.productId.name}</s.Name>
-              <s.Suppliers>{product.productId.suppliers}</s.Suppliers>
-            </s.NameBlock>
-            <s.Price>৳ {product.productId.price}</s.Price>
+            <s.Top>
+              <s.NameBlock>
+                <s.Name>{product.productId.name}</s.Name>
+                <s.Suppliers>{product.productId.suppliers}</s.Suppliers>
+              </s.NameBlock>
+              <s.Price>৳ {product.productId.price}</s.Price>
+            </s.Top>
             <s.BtnBlock>
               <Counter
                 amount={product.quantity}

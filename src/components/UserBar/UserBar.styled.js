@@ -4,6 +4,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 export const Cart = styled(Link)`
@@ -26,6 +30,12 @@ export const Cart = styled(Link)`
 
   &:hover {
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+    padding: 14px;
   }
 `;
 
@@ -59,5 +69,14 @@ export const User = styled.div`
     font-weight: 600;
     line-height: 1.4;
     color: ${({ theme }) => theme.color.green};
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+
+    & p {
+      font-size: 18px;
+    }
   }
 `;

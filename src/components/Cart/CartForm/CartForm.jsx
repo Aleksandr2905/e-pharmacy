@@ -51,18 +51,20 @@ const CartForm = () => {
         </s.Text>
         <s.InputWrapper>
           {cartForm.map((input) => (
-            <InputForm
-              id={input.name}
-              key={input.label}
-              label={input.label}
-              name={input.name}
-              type={input.type}
-              placeholder={input.placeholder}
-              register={register}
-              errors={errors}
-              touched={touchedFields[input.name]}
-              isValid={!errors[input.name] && watch(input.name)}
-            />
+            <s.InputTablet>
+              <InputForm
+                id={input.name}
+                key={input.label}
+                label={input.label}
+                name={input.name}
+                type={input.type}
+                placeholder={input.placeholder}
+                register={register}
+                errors={errors}
+                touched={touchedFields[input.name]}
+                isValid={!errors[input.name] && watch(input.name)}
+              />
+            </s.InputTablet>
           ))}
         </s.InputWrapper>
         <s.SubTitle>Payment method</s.SubTitle>

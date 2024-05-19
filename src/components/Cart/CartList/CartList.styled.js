@@ -4,6 +4,10 @@ export const List = styled.ul`
   display: flex;
   flex-direction: column;
   margin-top: 80px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 64px;
+  }
 `;
 
 export const Wrapper = styled.li`
@@ -27,6 +31,10 @@ export const Wrapper = styled.li`
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
+
+  @media screen and (min-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 export const Photo = styled.img`
@@ -38,10 +46,22 @@ export const Photo = styled.img`
   align-items: flex-start;
   border-radius: 27px;
   border: 1px solid ${({ theme }) => theme.color.promoBorder};
+
+  @media screen and (min-width: 768px) {
+    width: 122px;
+    height: 133px;
+  }
 `;
 
 export const Description = styled.div`
   width: 100%;
+`;
+
+export const Top = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const NameBlock = styled.div`
@@ -56,6 +76,10 @@ export const Name = styled.h3`
   font-weight: 600;
   line-height: 1.4;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Suppliers = styled.p`
@@ -63,6 +87,10 @@ export const Suppliers = styled.p`
   font-weight: 400;
   line-height: 1.17;
   color: ${({ theme }) => theme.color.textModal};
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const Price = styled.p`
@@ -70,6 +98,10 @@ export const Price = styled.p`
   font-weight: 500;
   line-height: 1.17;
   color: ${({ theme }) => theme.color.black};
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 export const BtnBlock = styled.div`
