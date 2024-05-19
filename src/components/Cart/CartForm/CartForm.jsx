@@ -51,7 +51,7 @@ const CartForm = () => {
         </s.Text>
         <s.InputWrapper>
           {cartForm.map((input) => (
-            <s.InputTablet>
+            <s.InputTablet key={input.label}>
               <InputForm
                 id={input.name}
                 key={input.label}
