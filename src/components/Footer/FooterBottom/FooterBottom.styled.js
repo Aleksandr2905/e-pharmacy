@@ -21,6 +21,10 @@ export const Wrapper = styled.ul`
       padding-right: 24px;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    padding-top: 40px;
+  }
 `;
 
 export const Item = styled.li`

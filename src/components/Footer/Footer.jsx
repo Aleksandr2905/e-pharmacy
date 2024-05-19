@@ -1,3 +1,4 @@
+import { useMediaQuery } from "react-responsive";
 import * as s from "./Footer.styled";
 import FooterBottom from "./FooterBottom/FooterBottom";
 import FooterLogo from "./FooterLogo/FooterLogo";
@@ -5,6 +6,8 @@ import FooterNavMenu from "./FooterNavMenu/FooterNavMenu";
 import Social from "./Social/Social";
 
 const Footer = () => {
+  const desktop = useMediaQuery({ query: "(min-width: 1440px)" });
+
   return (
     <>
       <s.Wrapper>
@@ -16,10 +19,17 @@ const Footer = () => {
               life, and enjoy every moment.
             </s.Text>
           </div>
-          <div>
-            <FooterNavMenu />
-            <Social />
-          </div>
+          {desktop ? (
+            <>
+              <FooterNavMenu />
+              <Social />
+            </>
+          ) : (
+            <div>
+              <FooterNavMenu />
+              <Social />
+            </div>
+          )}
         </s.FooterTop>
         <FooterBottom />
       </s.Wrapper>

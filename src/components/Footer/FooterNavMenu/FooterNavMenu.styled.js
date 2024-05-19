@@ -9,6 +9,10 @@ export const Wrapper = styled.nav`
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
   }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 50px;
+  }
 `;
 
 export const Button = styled(Link)`
@@ -20,5 +24,9 @@ export const Button = styled(Link)`
 
   &:hover {
     color: ${({ theme }) => theme.color.lightGrey30};
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
   }
 `;

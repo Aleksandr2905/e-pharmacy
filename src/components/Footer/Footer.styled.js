@@ -11,6 +11,10 @@ export const Wrapper = styled.footer`
     padding: 32px;
     margin-top: 60px;
   }
+
+  @media screen and (min-width: 1440px) {
+    padding: 40px 128px;
+  }
 `;
 
 export const FooterTop = styled.div`
@@ -35,5 +39,9 @@ export const Text = styled.p`
     margin-bottom: 88px;
     font-size: 16px;
     line-height: 1.25;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 64px;
   }
 `;

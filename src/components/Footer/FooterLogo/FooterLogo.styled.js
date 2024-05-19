@@ -5,11 +5,20 @@ export const Wrapper = styled.a`
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    gap: 14px;
+  }
 `;
 
 export const Img = styled.img`
   width: 32px;
   height: 32px;
+
+  @media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+  }
 `;
 
 export const Text = styled.p`
@@ -18,4 +27,8 @@ export const Text = styled.p`
   line-height: normal;
   letter-spacing: -0.48px;
   color: ${({ theme }) => theme.color.white};
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 `;
