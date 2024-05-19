@@ -7,7 +7,6 @@ import Social from "./Social/Social";
 
 const Footer = () => {
   const screen = useScreenWidth();
-  const mobile = screen === "mobile";
 
   return (
     <>

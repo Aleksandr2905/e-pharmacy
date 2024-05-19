@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.footer`
   margin-top: 40px;
   padding: 20px;
   background-color: ${({ theme }) => theme.color.green};
