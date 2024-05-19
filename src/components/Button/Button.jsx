@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import sprite from "../../assets/icons/sprite.svg";
 import * as s from "./Button.styled";
 
-const Button = ({ name, type, text, to, onClick, $homePage }) => {
+const Button = ({ name, type, text, to, onClick }) => {
   const { pathname } = useLocation();
   const homePage = pathname === "/";
 
@@ -37,7 +37,12 @@ const Button = ({ name, type, text, to, onClick, $homePage }) => {
 
     case "logout":
       BtnComponent = (
-        <s.BtnLogout to={to} onClick={onClick} aria-label={name}>
+        <s.BtnLogout
+          type={type}
+          onClick={onClick}
+          aria-label={name}
+          $homePage={homePage}
+        >
           {text}
         </s.BtnLogout>
       );
