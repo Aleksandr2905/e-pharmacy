@@ -3,7 +3,7 @@ import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import Button from "../Button/Button";
 import { logout } from "../../redux/auth/operations";
 
-const AuthButton = ({ handleCloseBurgerMenu }) => {
+const AuthButton = ({ handleCloseBurgerMenu, $homePage }) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
@@ -20,6 +20,7 @@ const AuthButton = ({ handleCloseBurgerMenu }) => {
           name="logout"
           text="Log out"
           onClick={() => handleLogOut()}
+          $homePage={$homePage}
         />
       ) : (
         <>
@@ -28,12 +29,14 @@ const AuthButton = ({ handleCloseBurgerMenu }) => {
             name="registerLink"
             text="Register"
             onClick={handleCloseBurgerMenu}
+            $homePage={$homePage}
           />
           <Button
             to="/login"
             name="loginLink"
             text="Login"
             onClick={handleCloseBurgerMenu}
+            $homePage={$homePage}
           />
         </>
       )}

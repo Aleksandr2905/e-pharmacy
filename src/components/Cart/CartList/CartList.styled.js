@@ -8,6 +8,10 @@ export const List = styled.ul`
   @media screen and (min-width: 768px) {
     margin-top: 64px;
   }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 0;
+  }
 `;
 
 export const Wrapper = styled.li`
@@ -35,6 +39,10 @@ export const Wrapper = styled.li`
   @media screen and (min-width: 768px) {
     gap: 20px;
   }
+
+  @media screen and (min-width: 1440px) {
+    width: 460px;
+  }
 `;
 
 export const Photo = styled.img`
@@ -55,6 +63,12 @@ export const Photo = styled.img`
 
 export const Description = styled.div`
   width: 100%;
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 export const Top = styled.div`

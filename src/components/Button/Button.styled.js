@@ -8,11 +8,13 @@ export const LinkLogin = styled(Link)`
   font-weight: 400;
   line-height: 1;
   text-decoration-line: underline;
-  color: ${({ theme }) => theme.color.promoBorder};
+  color: ${({ theme, $homePage }) =>
+    $homePage ? theme.color.promoBorder : theme.color.green};
   transition: all 0.3s;
 
   &:hover {
-    color: ${({ theme }) => theme.color.buttonBorder};
+    color: ${({ theme, $homePage }) =>
+      $homePage ? theme.color.buttonBorder : theme.color.darkGreen};
   }
 `;
 
@@ -28,12 +30,17 @@ export const LinkRegister = styled(Link)`
   line-height: 1;
   background-color: transparent;
   transition: all 0.3s;
-  border: 1px solid ${({ theme }) => theme.color.buttonBorder};
-  color: ${({ theme }) => theme.color.promoBorder};
+  border: 1px solid
+    ${({ theme, $homePage }) =>
+      $homePage ? theme.color.buttonBorder : theme.color.green};
+  color: ${({ theme, $homePage }) =>
+    $homePage ? theme.color.promoBorder : theme.color.green};
 
   &:hover {
-    background-color: ${({ theme }) => theme.color.promoBorder};
-    color: ${({ theme }) => theme.color.green};
+    background-color: ${({ theme, $homePage }) =>
+      $homePage ? theme.color.promoBorder : theme.color.green};
+    color: ${({ theme, $homePage }) =>
+      $homePage ? theme.color.green : theme.color.white};
   }
 `;
 
@@ -49,12 +56,17 @@ export const BtnLogout = styled.button`
   line-height: 1;
   background-color: transparent;
   transition: all 0.3s;
-  border: 1px solid ${({ theme }) => theme.color.buttonBorder};
-  color: ${({ theme }) => theme.color.promoBorder};
+  border: 1px solid
+    ${({ theme, $homePage }) =>
+      $homePage ? theme.color.buttonBorder : theme.color.green};
+  color: ${({ theme, $homePage }) =>
+    $homePage ? theme.color.promoBorder : theme.color.green};
 
   &:hover {
-    background-color: ${({ theme }) => theme.color.promoBorder};
-    color: ${({ theme }) => theme.color.green};
+    background-color: ${({ theme, $homePage }) =>
+      $homePage ? theme.color.promoBorder : theme.color.green};
+    color: ${({ theme, $homePage }) =>
+      $homePage ? theme.color.green : theme.color.white};
   }
 `;
 

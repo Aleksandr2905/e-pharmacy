@@ -8,8 +8,10 @@ const Cart = () => {
     <Container>
       <s.Wrapper>
         <s.Title>Cart</s.Title>
-        <CartForm />
-        <CartList />
+        <s.Block>
+          <CartForm />
+          <CartList />
+        </s.Block>
       </s.Wrapper>
     </Container>
   );

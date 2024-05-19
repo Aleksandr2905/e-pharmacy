@@ -8,6 +8,11 @@ export const Wrapper = styled.form`
   @media screen and (min-width: 768px) {
     padding: 40px 78px;
   }
+
+  @media screen and (min-width: 1440px) {
+    width: 628px;
+    padding: 40px;
+  }
 `;
 
 export const SubTitle = styled.h3`
