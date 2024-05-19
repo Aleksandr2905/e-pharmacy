@@ -15,6 +15,8 @@ export const Wrapper = styled.div`
 
   @media screen and (min-width: 1440px) {
     max-width: ${({ $isProductPage }) => ($isProductPage ? "100%" : "280px")};
+    flex-direction: column;
+    gap: ${({ $isProductPage }) => ($isProductPage ? "20px" : "8px")};
   }
 `;
 
@@ -31,7 +33,7 @@ export const Photo = styled.img`
 
   @media screen and (min-width: 1440px) {
     width: ${({ $isProductPage }) => ($isProductPage ? "364px" : "280px")};
-    height: ${({ $isProductPage }) => ($isProductPage ? "284px" : "280px")};
+    height: ${({ $isProductPage }) => ($isProductPage ? "337px" : "280px")};
   }
 `;
 
@@ -51,6 +53,11 @@ export const Description = styled.div`
     justify-content: ${({ $isProductPage }) =>
       $isProductPage ? "space-between" : ""};
   }
+
+  @media screen and (min-width: 1440px) {
+    padding: 20px;
+    gap: 40px;
+  }
 `;
 
 export const Top = styled.div`
@@ -59,9 +66,12 @@ export const Top = styled.div`
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    flex-direction: ${({ $isProductPage }) =>
-      $isProductPage ? "column" : "none"};
-    gap: ${({ $isProductPage }) => ($isProductPage ? "32px" : "none")};
+    flex-direction: ${({ $isProductPage }) => ($isProductPage ? "column" : "")};
+    gap: ${({ $isProductPage }) => ($isProductPage ? "32px" : "")};
+  }
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: ${({ $isProductPage }) => ($isProductPage ? "row" : "")};
   }
 `;
 

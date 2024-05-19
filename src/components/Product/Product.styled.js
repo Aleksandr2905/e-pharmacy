@@ -11,4 +11,10 @@ export const Wrapper = styled.div`
     max-width: 704px;
     gap: 16px;
   }
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    max-width: 1184px;
+    gap: 20px;
+  }
 `;

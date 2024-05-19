@@ -4,7 +4,6 @@ import ProductItem from "../../ProductItem/ProductItem";
 
 const ProductOverview = () => {
   const product = useSelector(selectProduct);
-  console.log(product);
 
   return <ProductItem product={product} />;
 };

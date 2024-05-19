@@ -10,6 +10,10 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 768px) {
     padding: 32px;
   }
+
+  @media screen and (min-width: 1440px) {
+    padding: 40px 40px 80px;
+  }
 `;
 
 export const BtnWrapper = styled.div`
@@ -19,6 +23,10 @@ export const BtnWrapper = styled.div`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 40px;
   }
 `;
 
