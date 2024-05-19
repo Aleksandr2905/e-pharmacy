@@ -74,8 +74,8 @@ export const Phone = styled.div`
 
   @media screen and (min-width: 1440px) {
     &::before {
-      left: ${({ $isHomePage }) => ($isHomePage ? "219px" : "191px")};
-      bottom: ${({ $isHomePage }) => ($isHomePage ? "-73px" : "38px")};
+      left: ${({ $isHomePage }) => ($isHomePage ? "219px" : "226px")};
+      bottom: ${({ $isHomePage }) => ($isHomePage ? "-73px" : "41px")};
     }
   }
 `;

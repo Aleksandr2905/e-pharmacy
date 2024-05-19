@@ -7,7 +7,7 @@ const StoresList = ({ stores }) => {
   const home = pathname === "/";
 
   return (
-    <s.Wrapper>
+    <s.Wrapper $isHomePage={home}>
       {stores.map((store) => (
         <s.Item key={store._id} $isHomePage={home}>
           <StoreItem store={store} />

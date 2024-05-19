@@ -15,7 +15,8 @@ export const Wrapper = styled.ul`
 
   @media screen and (min-width: 1440px) {
     max-width: 1248px;
-    gap: 38px 36px;
+    gap: 38px 36px
+      ${({ $isHomePage }) => ($isHomePage ? "38px 36px" : "40px 20px")};
   }
 `;
 
@@ -75,8 +76,8 @@ export const Item = styled.li`
   }
 
   @media screen and (min-width: 1440px) {
-    min-width: 392px;
-    height: 232px;
+    width: ${({ $isHomePage }) => ($isHomePage ? "392px" : "381px")};
+    height: ${({ $isHomePage }) => ($isHomePage ? "232px" : "276px")};
 
     &::before {
       right: ${({ $isHomePage }) => ($isHomePage ? "-126px" : "-137px")};

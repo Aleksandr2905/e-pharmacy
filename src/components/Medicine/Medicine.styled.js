@@ -10,6 +10,10 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 768px) {
     max-width: 704px;
   }
+
+  /* @media screen and (min-width: 1440px) {
+    max-width: 1248px;
+  } */
 `;
 
 export const Title = styled.h2`
@@ -23,5 +27,9 @@ export const Title = styled.h2`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 40px;
   }
 `;
