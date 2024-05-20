@@ -9,21 +9,25 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectOpenModal } from "./redux/pharmacy/selectors";
 import PrivateRoute from "./routes/PrivateRoute";
 import Loader from "./components/Loader/Loader";
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { selectIsLoading } from "./redux/auth/selectors";
+import HomePage from "./pages/HomePage/HomePage";
+import MedicinePage from "./pages/MedicinePage/MedicinePage";
+import MedicineStorePage from "./pages/MedicineStorePage/MedicineStorePage";
+import ProductPage from "./pages/ProductPage/ProductPage";
+import CartPage from "./pages/CartPage/CartPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
-// const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
-// const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
-const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
-const MedicineStorePage = lazy(() =>
-  import("./pages/MedicineStorePage/MedicineStorePage")
-);
-const MedicinePage = lazy(() => import("./pages/MedicinePage/MedicinePage"));
-const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
-const CartPage = lazy(() => import("./pages/CartPage/CartPage"));
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
+// const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+// const MedicineStorePage = lazy(() =>
+//   import("./pages/MedicineStorePage/MedicineStorePage")
+// );
+// const MedicinePage = lazy(() => import("./pages/MedicinePage/MedicinePage"));
+// const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
+// const CartPage = lazy(() => import("./pages/CartPage/CartPage"));
+// const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 const App = () => {
   const dispatch = useDispatch();
