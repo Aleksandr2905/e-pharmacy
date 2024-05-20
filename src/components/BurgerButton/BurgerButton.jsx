@@ -20,6 +20,7 @@ const BurgerButton = () => {
       type="button"
       $isHomePage={pathname === "/"}
       onClick={handleOpenBurgerMenu}
+      aria-label="BurgerMenu"
     >
       <svg width={32} height={26}>
         <use href={`${sprite}#burger`} />

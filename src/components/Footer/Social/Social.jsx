@@ -7,7 +7,12 @@ const Social = () => {
     <s.Wrapper>
       {social.map((item) => (
         <s.Item key={item.id}>
-          <a href={item.link} target="_blank" rel="noopener noreferrer">
+          <a
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={item.id}
+          >
             <svg width={28} height={28}>
               <use href={`${sprite}#${item.icon}`} />
             </svg>
