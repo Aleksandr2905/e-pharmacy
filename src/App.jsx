@@ -1,57 +1,60 @@
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import HomePage from "./pages/HomePage/HomePage";
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import MedicineStorePage from "./pages/MedicineStorePage/MedicineStorePage";
-import MedicinePage from "./pages/MedicinePage/MedicinePage";
-import ProductPage from "./pages/ProductPage/ProductPage";
-import CartPage from "./pages/CartPage/CartPage";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
 import ModalContent from "./components/ModalContent/ModalContent";
 import Modal from "./components/Modal/Modal";
 import { setModalContent, setModalStatus } from "./redux/pharmacy/reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { selectOpenModal } from "./redux/pharmacy/selectors";
-import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import PrivateRoute from "./routes/PrivateRoute";
-import { selectIsLoading } from "./redux/auth/selectors";
 import Loader from "./components/Loader/Loader";
+import { Suspense, lazy } from "react";
+
+const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
+const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const MedicineStorePage = lazy(() =>
+  import("./pages/MedicineStorePage/MedicineStorePage")
+);
+const MedicinePage = lazy(() => import("./pages/MedicinePage/MedicinePage"));
+const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage"));
+const CartPage = lazy(() => import("./pages/CartPage/CartPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 const App = () => {
   const dispatch = useDispatch();
   const modalStatus = useSelector(selectOpenModal);
-  const isLoading = useSelector(selectIsLoading);
 
   const handleCloseModal = () => {
     dispatch(setModalStatus(false));
     dispatch(setModalContent(null));
   };
 
-  return isLoading ? (
-    <Loader />
-  ) : (
+  return (
     <>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/medicine-store" element={<MedicineStorePage />} />
-          <Route path="/medicine" element={<MedicinePage />} />
-          <Route path="/product" element={<ProductPage />} />
-          <Route
-            path="/cart"
-            element={
-              <PrivateRoute>
-                <CartPage />
-              </PrivateRoute>
-            }
-          />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+
+          <Route path="/" element={<SharedLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="/medicine-store" element={<MedicineStorePage />} />
+            <Route path="/medicine" element={<MedicinePage />} />
+            <Route path="/product" element={<ProductPage />} />
+            <Route
+              path="/cart"
+              element={
+                <PrivateRoute>
+                  <CartPage />
+                </PrivateRoute>
+              }
+            />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
 
       <Modal open={modalStatus} onClose={handleCloseModal}>
         {<ModalContent />}

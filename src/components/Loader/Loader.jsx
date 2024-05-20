@@ -14,7 +14,7 @@ const Loader = () => {
         justifyContent: "center",
         alignItems: "center",
         background: "rgba(0, 0, 0, 0.25)",
-        backdropFilter: "blur(3px)",
+        backdropFilter: "blur(5px)",
       }}
     >
       <Hourglass
