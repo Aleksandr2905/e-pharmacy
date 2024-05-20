@@ -10,9 +10,12 @@ import { selectOpenModal } from "./redux/pharmacy/selectors";
 import PrivateRoute from "./routes/PrivateRoute";
 import Loader from "./components/Loader/Loader";
 import { Suspense, lazy } from "react";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import { selectIsLoading } from "./redux/auth/selectors";
 
-const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
-const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
+// const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
+// const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const MedicineStorePage = lazy(() =>
   import("./pages/MedicineStorePage/MedicineStorePage")
@@ -25,36 +28,37 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 const App = () => {
   const dispatch = useDispatch();
   const modalStatus = useSelector(selectOpenModal);
+  const isLoading = useSelector(selectIsLoading);
 
   const handleCloseModal = () => {
     dispatch(setModalStatus(false));
     dispatch(setModalContent(null));
   };
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
 
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/medicine-store" element={<MedicineStorePage />} />
-            <Route path="/medicine" element={<MedicinePage />} />
-            <Route path="/product" element={<ProductPage />} />
-            <Route
-              path="/cart"
-              element={
-                <PrivateRoute>
-                  <CartPage />
-                </PrivateRoute>
-              }
-            />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </Suspense>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/medicine-store" element={<MedicineStorePage />} />
+          <Route path="/medicine" element={<MedicinePage />} />
+          <Route path="/product" element={<ProductPage />} />
+          <Route
+            path="/cart"
+            element={
+              <PrivateRoute>
+                <CartPage />
+              </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
 
       <Modal open={modalStatus} onClose={handleCloseModal}>
         {<ModalContent />}
