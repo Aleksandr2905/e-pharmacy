@@ -10,7 +10,7 @@ const TabsContainer = () => {
   const [showDescription, setShowDescription] = useState(true);
   const [showReviews, setShowReviews] = useState(false);
   const mobile = useMediaQuery({ query: "(max-width: 767px)" });
-  console.log(mobile);
+
   const handleDescription = () => {
     setShowDescription(true);
     setShowReviews(false);

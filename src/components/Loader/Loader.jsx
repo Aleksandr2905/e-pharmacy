@@ -5,7 +5,7 @@ const Loader = () => {
     <div
       style={{
         position: "fixed",
-        zIndex: 99999,
+        zIndex: 9,
         top: 0,
         left: 0,
         width: "100vw",
@@ -24,10 +24,7 @@ const Loader = () => {
         ariaLabel="hourglass-loading"
         wrapperStyle={{}}
         wrapperClass=""
-        colors={[
-          `${({ theme }) => theme.color.green}`,
-          `${({ theme }) => theme.color.lightGreen}`,
-        ]}
+        colors={["#59B17A", "#3F945F"]}
       />
     </div>
   );

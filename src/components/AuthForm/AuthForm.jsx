@@ -39,14 +39,12 @@ const AuthForm = ({ formType = "Register" }) => {
         }
       );
       reset();
-      console.log(username, email, phone, password);
     } else {
       dispatch(login({ email, password })).then((response) => {
         if (!response.error) {
           navigate("/");
         }
       });
-      console.log(email, password);
       reset();
     }
   };
