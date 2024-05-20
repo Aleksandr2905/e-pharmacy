@@ -114,37 +114,42 @@ export const Title = styled.h2`
 export const Forma = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
+  /* gap: 10px; */
   width: 100%;
   height: 310px;
 
-  & > :nth-last-child(2) {
+  /* & > :nth-last-child(3) {
     margin-top: auto;
-  }
+  } */
 
   @media screen and (min-width: 768px) {
     flex-direction: ${({ $loginPage }) => ($loginPage ? "column" : "row")};
     flex-wrap: ${({ $loginPage }) => ($loginPage ? "nowrap" : "wrap")};
     height: auto;
+    width: 574px;
   }
 
-  @media screen and (min-width: 768px) {
-    width: 574px;
+  @media screen and (min-width: 1440px) {
     height: fit-content;
   }
 `;
 
 export const InputTablet = styled.div`
+  width: 100%;
   @media screen and (min-width: 768px) {
     width: ${({ $loginPage }) => ($loginPage ? "323px" : "280px")};
   }
 `;
 
 export const BtnWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* width: ${({ $loginPage }) => ($loginPage ? "323px" : "280px")}; */
+  margin-top: auto;
+
   @media screen and (min-width: 768px) {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
     width: ${({ $loginPage }) => ($loginPage ? "323px" : "280px")};
     margin-top: 62px;
   }
