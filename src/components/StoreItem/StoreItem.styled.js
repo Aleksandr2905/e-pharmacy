@@ -27,6 +27,13 @@ export const Address = styled.a`
   display: flex;
   flex-direction: column;
   gap: 4px;
+
+  &:hover {
+    & p {
+      font-weight: 500;
+      color: ${({ theme }) => theme.color.darkGreen};
+    }
+  }
 `;
 
 export const Text = styled.p`
@@ -48,6 +55,13 @@ export const Phone = styled.a`
   margin-top: 18px;
   margin-bottom: ${({ $isHomePage }) => ($isHomePage ? "0" : "36px")};
   position: relative;
+
+  &:hover {
+    & p {
+      font-weight: 500;
+      color: ${({ theme }) => theme.color.darkGreen};
+    }
+  }
 
   &::before {
     content: "";
