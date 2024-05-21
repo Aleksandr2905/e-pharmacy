@@ -1,18 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectNearestStores } from "../../redux/pharmacy/selectors";
-import { useEffect } from "react";
-import { getNearestStores } from "../../redux/pharmacy/operations";
 import { Container } from "../../styles/GlobalStyles";
 import StoresList from "../StoresList/StoresList";
 import * as s from "./NearestStores.styled";
 
 const MedicineStores = () => {
-  // const dispatch = useDispatch();
   const nearestStores = useSelector(selectNearestStores);
-
-  // useEffect(() => {
-  //   dispatch(getNearestStores({ limit: 6 }));
-  // }, [dispatch]);
 
   return (
     <Container>

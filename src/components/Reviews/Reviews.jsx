@@ -1,19 +1,12 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectReviews } from "../../redux/pharmacy/selectors";
-import { useEffect } from "react";
-import { getReviews } from "../../redux/pharmacy/operations";
 import { Container } from "../../styles/GlobalStyles";
 import * as s from "./Reviews.styled";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
 
 const Reviews = () => {
-  // const dispatch = useDispatch();
   const reviews = useSelector(selectReviews);
   const screen = useScreenWidth();
-
-  // useEffect(() => {
-  //   dispatch(getReviews());
-  // }, [dispatch]);
 
   const displayCount = screen === "mobile" ? 1 : screen === "tablet" ? 2 : 3;
 

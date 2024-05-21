@@ -4,6 +4,7 @@ export const Wrapper = styled.form`
   padding: 20px 20px 40px;
   border-radius: 27px;
   background: ${({ theme }) => theme.color.white};
+  height: fit-content;
 
   @media screen and (min-width: 768px) {
     padding: 40px 78px;
