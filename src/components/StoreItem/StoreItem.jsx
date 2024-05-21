@@ -16,12 +16,16 @@ const StoreItem = ({ store }) => {
           <svg width={18} height={18}>
             <use href={`${sprite}#map-pin`} />
           </svg>
-          <s.Address>
+          <s.Address
+            href={`https://www.google.com/maps/?q=${store.city},${store.address}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <s.Text>{store.address}</s.Text>
             <s.Text>{store.city}</s.Text>
           </s.Address>
         </s.Location>
-        <s.Phone $isHomePage={home}>
+        <s.Phone href={`tel:${store.phone}`} $isHomePage={home}>
           <svg width={18} height={18}>
             <use href={`${sprite}#phone`} />
           </svg>

@@ -23,7 +23,7 @@ export const Location = styled.div`
   }
 `;
 
-export const Address = styled.div`
+export const Address = styled.a`
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -42,7 +42,7 @@ export const Text = styled.p`
   }
 `;
 
-export const Phone = styled.div`
+export const Phone = styled.a`
   display: flex;
   gap: 8px;
   margin-top: 18px;

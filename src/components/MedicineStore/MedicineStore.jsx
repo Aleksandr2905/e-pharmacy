@@ -7,12 +7,12 @@ import { getAllStores } from "../../redux/pharmacy/operations";
 import { useEffect } from "react";
 
 const MedicineStore = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const stores = useSelector(selectStores);
 
-  useEffect(() => {
-    dispatch(getAllStores());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getAllStores());
+  // }, [dispatch]);
 
   return (
     <Container>

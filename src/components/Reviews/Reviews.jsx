@@ -7,13 +7,13 @@ import * as s from "./Reviews.styled";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
 
 const Reviews = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const reviews = useSelector(selectReviews);
   const screen = useScreenWidth();
 
-  useEffect(() => {
-    dispatch(getReviews());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getReviews());
+  // }, [dispatch]);
 
   const displayCount = screen === "mobile" ? 1 : screen === "tablet" ? 2 : 3;
 

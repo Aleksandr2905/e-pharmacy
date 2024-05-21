@@ -7,12 +7,12 @@ import StoresList from "../StoresList/StoresList";
 import * as s from "./NearestStores.styled";
 
 const MedicineStores = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const nearestStores = useSelector(selectNearestStores);
 
-  useEffect(() => {
-    dispatch(getNearestStores({ limit: 6 }));
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getNearestStores({ limit: 6 }));
+  // }, [dispatch]);
 
   return (
     <Container>

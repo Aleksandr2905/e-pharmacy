@@ -18,11 +18,17 @@ import MedicineStorePage from "./pages/MedicineStorePage/MedicineStorePage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CartPage from "./pages/CartPage/CartPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import { getUserInfo } from "./redux/auth/operations";
+import { useEffect } from "react";
 
 const App = () => {
   const dispatch = useDispatch();
   const modalStatus = useSelector(selectOpenModal);
   const isLoading = useSelector(selectIsLoading);
+
+  useEffect(() => {
+    dispatch(getUserInfo());
+  }, [dispatch]);
 
   const handleCloseModal = () => {
     dispatch(setModalStatus(false));

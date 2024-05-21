@@ -25,8 +25,9 @@ export const registration = createAsyncThunk(
           toast.error("Server error");
           break;
         default:
-          return rejectWithValue(error);
+          return;
       }
+      return rejectWithValue(error);
     }
   }
 );
@@ -54,8 +55,9 @@ export const login = createAsyncThunk(
           toast.error("Server error");
           break;
         default:
-          return rejectWithValue(error);
+          return;
       }
+      return rejectWithValue(error);
     }
   }
 );

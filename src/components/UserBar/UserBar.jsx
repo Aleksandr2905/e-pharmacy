@@ -8,16 +8,16 @@ import { getCartItems } from "../../redux/pharmacy/operations";
 import { getUserInfo } from "../../redux/auth/operations";
 
 const UserBar = ({ $isHomePage }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const cart = useSelector(selectCart);
   const name = useSelector(selectUsername);
   const quantity = cart?.cartProducts?.length || 0;
 
-  useEffect(() => {
-    dispatch(getCartItems());
-    dispatch(getUserInfo());
-  }, [dispatch, quantity]);
+  // useEffect(() => {
+  //   dispatch(getCartItems());
+  //   dispatch(getUserInfo());
+  // }, [dispatch, quantity]);
 
   return isLoggedIn ? (
     <s.Wrapper>
