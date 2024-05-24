@@ -15,7 +15,7 @@ const UserBar = ({ $isHomePage }) => {
 
   useEffect(() => {
     dispatch(getCartItems());
-  }, [quantity]);
+  }, [dispatch, quantity]);
 
   return isLoggedIn ? (
     <s.Wrapper>
