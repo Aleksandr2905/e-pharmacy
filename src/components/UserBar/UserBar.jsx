@@ -8,7 +8,7 @@ const UserBar = ({ $isHomePage }) => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const cart = useSelector(selectCart);
   const name = useSelector(selectUsername);
-  const quantity = cart?.cartProducts?.length || 0;
+  const quantity = cart.cartProducts?.length || 0;
 
   return isLoggedIn ? (
     <s.Wrapper>

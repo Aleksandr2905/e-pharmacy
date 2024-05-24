@@ -38,7 +38,14 @@ const Filter = ({ totalPages }) => {
         limit: isDesktop ? 12 : 9,
       })
     );
-  }, [dispatch, selectCategory, search, currentPage, isDesktop, totalPages]);
+  }, [
+    dispatch,
+    selectCategory.value,
+    search,
+    currentPage,
+    isDesktop,
+    totalPages,
+  ]);
 
   const handleCategoryChange = (selectedOption) => {
     setSelectCategory(selectedOption);
