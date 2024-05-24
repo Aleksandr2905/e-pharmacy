@@ -49,7 +49,6 @@ export const Photo = styled.img`
   display: flex;
   width: 120px;
   height: 120px;
-  padding: 14px 18px;
   flex-direction: column;
   align-items: flex-start;
   border-radius: 27px;
