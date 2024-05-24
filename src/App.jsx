@@ -20,6 +20,7 @@ import CartPage from "./pages/CartPage/CartPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { getUserInfo } from "./redux/auth/operations";
 import { useEffect } from "react";
+import PublicRoute from "./routes/PublicRoute";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -40,8 +41,22 @@ const App = () => {
   ) : (
     <>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <LoginPage />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <PublicRoute>
+              <RegisterPage />
+            </PublicRoute>
+          }
+        />
 
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
