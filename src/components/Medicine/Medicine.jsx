@@ -19,7 +19,7 @@ const Medicine = () => {
         <s.Title>Medicine</s.Title>
         <Filter totalPages={totalPages} />
         <ProductsList products={products} />
-        <PaginationButtons />
+        {totalPages <= 1 ? null : <PaginationButtons />}
       </s.Wrapper>
     </Container>
   );
