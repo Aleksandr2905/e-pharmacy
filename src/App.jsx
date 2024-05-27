@@ -21,6 +21,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import { getUserInfo } from "./redux/auth/operations";
 import { useEffect } from "react";
 import PublicRoute from "./routes/PublicRoute";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -74,6 +75,7 @@ const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
+      <ScrollToTop />
 
       <Modal open={modalStatus} onClose={handleCloseModal}>
         {<ModalContent />}

@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <>
-      <s.Wrapper>
+      <s.Wrapper id="footer">
         <s.FooterTop>
           <div>
             <FooterLogo />
